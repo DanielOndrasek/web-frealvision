@@ -18,7 +18,9 @@ import { JsonLd, realEstateAgentSchema } from "@/lib/seo/schema";
 export const revalidate = 300;
 
 export const metadata: Metadata = {
-  title: "Realitní makléř — prodej bytů, domů a pozemků",
+  // Šablona „%s | jméno“ z layoutu se na kořenovou stránku nepoužije,
+  // jméno proto musí být v titulku přímo.
+  title: { absolute: "František Kroupa — realitní makléř, prodej nemovitostí" },
   description:
     "František Kroupa — stratég, vyjednavač a marketér s důrazem na detail. Prodej i koupě nemovitosti s jasným plánem. Odhad ceny zdarma.",
   alternates: { canonical: "/" },
