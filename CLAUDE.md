@@ -33,6 +33,9 @@ s Nemo1), vizuál je vlastní: černobílý podle loga.
 
 Nepřidávej Supabase, Prisma ani žádné úložiště.
 
+**Web nabízí jen prodej, ne pronájem.** Pronájmy z feedu se na web vůbec
+nedostanou (`lib/properties/scope.ts`), v textech se pronájem nenabízí.
+
 ---
 
 ## Vizuál — černobílý základ, žlutá pro rozjasnění

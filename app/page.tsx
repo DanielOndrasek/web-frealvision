@@ -20,7 +20,7 @@ export const revalidate = 300;
 export const metadata: Metadata = {
   title: "Realitní makléř — prodej bytů, domů a pozemků",
   description:
-    "František Kroupa — stratég, vyjednavač a marketér s důrazem na detail. Prodej, koupě i pronájem nemovitosti s jasným plánem. Odhad ceny zdarma.",
+    "František Kroupa — stratég, vyjednavač a marketér s důrazem na detail. Prodej i koupě nemovitosti s jasným plánem. Odhad ceny zdarma.",
   alternates: { canonical: "/" },
 };
 

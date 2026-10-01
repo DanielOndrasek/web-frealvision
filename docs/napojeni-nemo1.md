@@ -66,7 +66,9 @@ Ověření: `npm run check:feed` — vypíše počet inzerátů, tajemství neti
 **Feed** (`GET`): hlavičky `X-Nemo1-Integration-Id` a
 `Authorization: Bearer <tajemství>`. Posílá jen inzeráty se zapnutým
 exportem a stavem `active` / `inactive`; `draft` nikdy. Stažený inzerát
-přijde jako `status: inactive` a web ho ukáže jako Prodáno / Pronajato.
+přijde jako `status: inactive` a web ho ukáže jako Prodáno. **Pronájmy web
+nezobrazuje vůbec** (`lib/properties/scope.ts`) — František na webu nabízí
+jen prodej, i kdyby u pronájmu zapnul export.
 
 **Webhook poptávek** (`POST`, `lib/leads/`):
 

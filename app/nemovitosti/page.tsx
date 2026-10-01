@@ -12,7 +12,7 @@ import { getAllListings } from "@/lib/properties/feed";
 export const metadata: Metadata = {
   title: "Nabídka nemovitostí",
   description:
-    "Aktuální nabídka bytů, domů a pozemků k prodeji i pronájmu. Ověřené nabídky s kompletními podklady a osobním přístupem makléře.",
+    "Aktuální nabídka bytů, domů a pozemků k prodeji. Ověřené nabídky s kompletními podklady a osobním přístupem makléře.",
   alternates: { canonical: "/nemovitosti" },
 };
 
@@ -26,7 +26,6 @@ export default async function PropertiesPage({
     typeof params[key] === "string" ? (params[key] as string) : undefined;
 
   const values: FilterValues = {
-    typ: read("typ"),
     druh: read("druh"),
     lokalita: read("lokalita"),
     cena: read("cena"),

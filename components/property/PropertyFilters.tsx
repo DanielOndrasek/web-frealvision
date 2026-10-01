@@ -2,7 +2,6 @@ import { Button } from "@/components/ui/Button";
 import type { Listing } from "@/lib/properties/types";
 
 export interface FilterValues {
-  typ?: string;
   druh?: string;
   lokalita?: string;
   cena?: string;
@@ -40,7 +39,7 @@ export function PropertyFilters({
   return (
     <form
       method="get"
-      className="grid gap-3 rounded-lg border border-line bg-surface-subtle p-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-[repeat(5,1fr)_auto]"
+      className="grid gap-3 rounded-lg border border-line bg-surface-subtle p-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-[repeat(4,1fr)_auto]"
     >
       <div>
         <label htmlFor="stav" className="sr-only">
@@ -51,17 +50,6 @@ export function PropertyFilters({
           <option value="aktivni">Aktivní</option>
           <option value="rezervace">Rezervace</option>
           <option value="ukonceno">Ukončeno</option>
-        </select>
-      </div>
-
-      <div>
-        <label htmlFor="typ" className="sr-only">
-          Typ nabídky
-        </label>
-        <select id="typ" name="typ" defaultValue={values.typ ?? ""} className={fieldClass}>
-          <option value="">Prodej i pronájem</option>
-          <option value="prodej">Prodej</option>
-          <option value="pronajem">Pronájem</option>
         </select>
       </div>
 
@@ -130,7 +118,6 @@ export function applyFilters(listings: Listing[], values: FilterValues): Listing
 
   return listings.filter((l) => {
     if (state && l.state !== state) return false;
-    if (values.typ && l.adType !== values.typ) return false;
     if (values.druh && l.kind !== values.druh) return false;
     if (values.lokalita && l.city !== values.lokalita) return false;
     if (maxPrice && Number.isFinite(maxPrice)) {

@@ -21,7 +21,7 @@ export const site = {
   url,
   locale: "cs_CZ",
   description:
-    "Realitní makléř František Kroupa — stratég, vyjednavač a marketér s důrazem na detail. Prodej, koupě i pronájem bytů, domů a pozemků.",
+    "Realitní makléř František Kroupa — stratég, vyjednavač a marketér s důrazem na detail. Prodej i koupě bytů, domů a pozemků.",
 
   phone: "+420 777 990 900",
   phoneHref: "tel:+420777990900",

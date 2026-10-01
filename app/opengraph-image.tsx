@@ -28,7 +28,7 @@ export default function OpengraphImage() {
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: 16, fontSize: 24, color: "#B3B3B3", letterSpacing: 4, textTransform: "uppercase" }}>
-          <div style={{ width: 12, height: 12, background: "#FFFFFF" }} />
+          <div style={{ width: 12, height: 12, background: "#FFD23F" }} />
           {site.name} · Realitní makléř
         </div>
 
@@ -40,7 +40,7 @@ export default function OpengraphImage() {
           <div style={{ width: 2, height: 22, background: "#B3B3B3" }} />
           <div style={{ flex: 1, height: 2, background: "#2E2E2E" }} />
           <div style={{ padding: "0 20px", fontSize: 22, color: "#B3B3B3", letterSpacing: 4, textTransform: "uppercase" }}>
-            Prodej · Koupě · Pronájem
+            Prodej · Koupě · Odhad
           </div>
           <div style={{ flex: 1, height: 2, background: "#2E2E2E" }} />
           <div style={{ width: 2, height: 22, background: "#B3B3B3" }} />

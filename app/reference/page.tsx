@@ -11,7 +11,7 @@ import { profile } from "@/lib/profile";
 export const metadata: Metadata = {
   title: "Reference klientů",
   description:
-    "Co o spolupráci říkají klienti, kterým jsem pomohl prodat, koupit nebo pronajmout nemovitost.",
+    "Co o spolupráci říkají klienti, kterým jsem pomohl prodat nebo koupit nemovitost.",
   alternates: { canonical: "/reference" },
 };
 
@@ -35,7 +35,7 @@ export default async function ReferencesPage() {
       <PageHeader
         eyebrow="Reference"
         title="Co říkají klienti"
-        lead="Zkušenosti lidí, se kterými jsem prodával, kupoval nebo pronajímal."
+        lead="Zkušenosti lidí, se kterými jsem prodával a kupoval nemovitosti."
       />
 
       <StatsBand />

@@ -208,9 +208,7 @@ export default async function PropertyDetailPage({
                   <>
                     <h2 className="text-lg font-semibold">Nabídka je uzavřená</h2>
                     <p className="mt-2 text-sm text-ink-muted">
-                      {listing.adType === "pronajem"
-                        ? "Tuhle nemovitost už jsem pronajal."
-                        : "Tuhle nemovitost už jsem prodal."}{" "}
+                      Tuhle nemovitost už jsem prodal.{" "}
                       Hledáte něco podobného? Ozvěte se, často mám nabídky
                       ještě před zveřejněním.
                     </p>

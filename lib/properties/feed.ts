@@ -4,6 +4,7 @@ import sample from "./contract/sample.json";
 import { toListing } from "./normalize";
 import { getListingOverrides, type ListingOverride } from "./overrides";
 import { getSnapshotAdverts } from "./snapshots";
+import { isOfferedOnWeb } from "./scope";
 import type { Advert, AdvertFeed, Listing, ListingState } from "./types";
 
 /**
@@ -51,11 +52,16 @@ type Overrides = Map<string, ListingOverride>;
  * Inzerát, který se vůbec smí dostat na web.
  *
  * Stav se tu neřeší. Feed rozlišuje jen `active` a `inactive` a `inactive`
- * neznamená „zahoď“ — viz `closedState()`. Nadobro sundá nabídku jen
- * zápis `"stav": "skryto"` v `content/stavy-nabidek.json`.
+ * neznamená „zahoď“ — viz `closedState()`. Nadobro sundá nabídku zápis
+ * `"stav": "skryto"` v `content/stavy-nabidek.json` — a pronájem, který
+ * web nenabízí vůbec (`scope.ts`).
  */
 function isPublishable(advert: Advert, overrides: Overrides): boolean {
-  return Boolean(advert.title) && overrides.get(advert.id) !== "skryto";
+  return (
+    Boolean(advert.title) &&
+    isOfferedOnWeb(advert) &&
+    overrides.get(advert.id) !== "skryto"
+  );
 }
 
 /**

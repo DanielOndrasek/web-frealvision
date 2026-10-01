@@ -23,6 +23,12 @@ Poslední aktualizace: 1. 10. 2026.
   změny. Vymyšlený postup „Jak pracuji“ z první verze je pryč.
 - 26 referencí z profilu na archer-reality.cz (`content/recenze.json`).
 
+## Rozhodnuto
+
+- **Jen prodej, žádný pronájem** (1. 10. 2026). Pronájmy z Nemo1 web
+  filtruje, z textů i filtru nabídky pronájem zmizel. Reference, které
+  pronájem zmiňují (Cao, Hamarová), zůstaly — jsou to slova klientů.
+
 ## Chybí — web bez toho nejde spustit
 
 Lišta nahoře na webu je vypisuje, dokud nejsou doplněné.
