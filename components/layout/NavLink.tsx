@@ -27,9 +27,9 @@ export function NavLink({
       className={cn(
         "relative px-2.5 py-2 text-sm font-medium whitespace-nowrap transition-colors duration-150 xl:px-3",
         active ? "text-ink" : "text-ink-muted hover:text-ink",
-        // Aktivní položku značí žlutá linka pod textem — stav nese i aria-current
+        // Aktivní položku značí linka v barvě značky — stav nese i aria-current
         active &&
-          "after:absolute after:inset-x-2.5 after:-bottom-0.5 after:h-[3px] after:bg-sun xl:after:inset-x-3",
+          "after:absolute after:inset-x-2.5 after:-bottom-0.5 after:h-[3px] after:bg-brand xl:after:inset-x-3",
         className,
       )}
     >

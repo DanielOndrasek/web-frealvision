@@ -5,12 +5,12 @@
  * proměnné.
  *
  * Základ je černobílý jako logo F·Real Vision, s teplým papírovým tónem
- * místo studené šedé. Web rozjasňuje jediná barva: slunečná žlutá `sun`
- * — lišta nahoře, hlavní tlačítka, pruh s odhadem, zvýraznění.
+ * místo studené šedé. Web rozjasňuje jediná barva značky `brand` — lišta
+ * nahoře, hlavní tlačítka, pruh s odhadem, zvýraznění, plocha za portrétem.
  *
- * Žlutá na bílé nesplňuje kontrast pro text (1,5 : 1), proto je vždy jen
- * plocha, linka nebo velký dekorativní znak. Text na žluté je černý
- * (13,7 : 1).
+ * Barva značky není nikdy barva textu na bílé (světlé odstíny nesplní
+ * kontrast), je vždy jen plocha, linka nebo velký dekorativní znak. Text na
+ * ní je černý, tlumený text `brand-ink-muted`.
  *
  * Fotografie — nabídky i portrét — se nikdy neodbarvují.
  *
@@ -20,7 +20,7 @@
 @theme {
   /* Text — kontrasty na bílé / na papíru #F7F5F0 */
   --color-ink: #0a0a0a;          /* 19,8 : 1 */
-  --color-ink-muted: #474747;    /*  9,4 : 1 / 8,6 : 1, na žluté 6,4 : 1 */
+  --color-ink-muted: #474747;    /*  9,4 : 1 / 8,6 : 1 */
   --color-ink-subtle: #666666;   /*  5,7 : 1 / 5,2 : 1 */
   --color-ink-inverse: #ffffff;
   /* Text na černé ploše */
@@ -49,10 +49,16 @@
   /* Čtvercová tečka z loga („F·Real“) — hlavní grafický motiv webu */
   --color-dot: #0a0a0a;
 
-  /* Slunečná žlutá — jediná barva webu. Jen plochy a linky, nikdy text. */
-  --color-sun: #ffd23f;
-  --color-sun-strong: #f5c21a;   /* hover */
-  --color-sun-soft: #fff6d6;     /* světlý podklad */
+  /*
+   * Barva značky — jediná barva webu. Barevná varianta webu se mění jen
+   * tady (a v app/opengraph-image.tsx, který CSS proměnné nečte).
+   *
+   * Slunečná žlutá: černý text na ní 13,7 : 1, tlumený 6,4 : 1.
+   */
+  --color-brand: #ffd23f;
+  --color-brand-strong: #f5c21a;   /* hover */
+  --color-brand-soft: #fff6d6;     /* světlý podklad */
+  --color-brand-ink-muted: #474747; /* tlumený text na barvě značky */
 
   /* Stavy nabídky — rozlišené plochou, ne barvou */
   --color-status-active: #ffffff;
@@ -106,7 +112,7 @@
   }
 
   ::selection {
-    background: var(--color-sun);
+    background: var(--color-brand);
     color: var(--color-ink);
   }
 
@@ -133,8 +139,8 @@
 }
 
 /*
- * Štítek sekce se čtvercovou tečkou z loga — žlutou, s obrysem v barvě
- * textu, aby byla vidět na bílé, na žluté i na černé.
+ * Štítek sekce se čtvercovou tečkou z loga — v barvě značky, s obrysem
+ * v barvě textu, aby byla vidět na bílé, na barevné ploše i na černé.
  */
 @utility eyebrow {
   display: flex;
@@ -150,7 +156,7 @@
     content: "";
     width: 0.6em;
     height: 0.6em;
-    background: var(--color-sun);
+    background: var(--color-brand);
     outline: 1px solid currentColor;
     outline-offset: -1px;
     flex: none;
@@ -172,14 +178,14 @@
 }
 
 /*
- * Zvýraznění žlutým fixem — spodní část řádku podbarvená žlutou, text nad
- * ní zůstává černý. Pro jedno slovo v nadpisu, ne pro celé věty.
+ * Zvýraznění fixem — spodní část řádku podbarvená barvou značky, text
+ * nad ní zůstává černý. Pro jedno slovo v nadpisu, ne pro celé věty.
  */
 @utility highlight {
   background-image: linear-gradient(
     transparent 62%,
-    var(--color-sun) 62%,
-    var(--color-sun) 92%,
+    var(--color-brand) 62%,
+    var(--color-brand) 92%,
     transparent 92%
   );
   padding-inline: 0.06em;

@@ -43,9 +43,9 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Žlutá plocha odsazená za portrétem — barva, která úvod rozjasní */}
+          {/* Plocha v barvě značky odsazená za portrétem — úvod rozjasní */}
           <div className="relative mx-auto w-full max-w-[440px]">
-            <div aria-hidden className="absolute inset-0 translate-x-4 translate-y-4 bg-sun sm:translate-x-6 sm:translate-y-6" />
+            <div aria-hidden className="absolute inset-0 translate-x-4 translate-y-4 bg-brand sm:translate-x-6 sm:translate-y-6" />
             <CropMarks className="relative bg-surface p-3 sm:p-4">
               <Portrait priority />
             </CropMarks>

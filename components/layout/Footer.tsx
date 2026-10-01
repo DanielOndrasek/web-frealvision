@@ -17,7 +17,7 @@ export function Footer() {
   ].filter(Boolean);
 
   return (
-    <footer className="border-t-4 border-sun bg-surface-footer text-ink-inverse">
+    <footer className="border-t-4 border-brand bg-surface-footer text-ink-inverse">
       <Container size="wide">
         <div className="grid gap-12 pt-16 pb-12 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr]">
           <div>

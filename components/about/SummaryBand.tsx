@@ -2,10 +2,10 @@ import { Container } from "@/components/ui/Container";
 import { Dimension } from "@/components/ui/Dimension";
 import { profile } from "@/lib/profile";
 
-/** Závěrečné shrnutí na světle žlutém pruhu — jedna věta velkým písmem. */
+/** Závěrečné shrnutí na světlém odstínu barvy značky — jedna věta velkým písmem. */
 export function SummaryBand() {
   return (
-    <section className="bg-sun-soft text-ink">
+    <section className="bg-brand-soft text-ink">
       <Container size="wide">
         <div className="py-16 sm:py-24">
           <p className="eyebrow">{profile.summaryTitle}</p>

@@ -10,9 +10,9 @@ const base =
   "disabled:pointer-events-none disabled:opacity-50";
 
 const variants: Record<Variant, string> = {
-  // Hlavní výzva: žlutá plocha, černý text — nejjasnější místo stránky
-  primary: "bg-sun text-ink hover:bg-sun-strong",
-  // Plná černá: odeslání formuláře, akce na žluté ploše
+  // Hlavní výzva: plocha v barvě značky, černý text — nejjasnější místo stránky
+  primary: "bg-brand text-ink hover:bg-brand-strong",
+  // Plná černá: odeslání formuláře, akce na barevné ploše
   solid: "bg-accent text-ink-inverse hover:bg-accent-hover",
   // Vedlejší akce: černý obrys, při najetí se vyplní
   secondary: "border border-ink bg-transparent text-ink hover:bg-ink hover:text-ink-inverse",

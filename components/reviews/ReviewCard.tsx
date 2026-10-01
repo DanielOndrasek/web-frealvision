@@ -15,7 +15,7 @@ function formatReviewDate(date: string): string {
 export function ReviewCard({ review }: { review: ClientReview }) {
   return (
     <figure className="flex h-full flex-col border border-line bg-surface p-7 sm:p-8">
-      <span aria-hidden className="font-serif text-7xl leading-[0.6] text-sun">
+      <span aria-hidden className="font-serif text-7xl leading-[0.6] text-brand">
         “
       </span>
 
@@ -30,7 +30,7 @@ export function ReviewCard({ review }: { review: ClientReview }) {
       </blockquote>
 
       <figcaption className="mt-7 flex items-center gap-3 border-t border-line pt-5">
-        <span aria-hidden className="size-2 shrink-0 bg-sun outline outline-1 -outline-offset-1 outline-ink" />
+        <span aria-hidden className="size-2 shrink-0 bg-brand outline outline-1 -outline-offset-1 outline-ink" />
         <span className="min-w-0">
           <span className="block text-sm font-semibold">{review.author}</span>
           {review.context || review.date ? (

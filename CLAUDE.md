@@ -38,14 +38,16 @@ nedostanou (`lib/properties/scope.ts`), v textech se pronájem nenabízí.
 
 ---
 
-## Vizuál — černobílý základ, žlutá pro rozjasnění
+## Vizuál — černobílý základ, jedna barva pro rozjasnění
 
 - Barvy jen přes tokeny v `app/globals.css`. Základ je černobílý jako logo,
   plochy mají teplý papírový tón (`surface-subtle`), ne studenou šedou.
-- **Jediná barva je slunečná žlutá `sun`** — lišta nahoře, hlavní tlačítka
-  (`Button` primary), pruh s odhadem a statistikami, zvýraznění slova
-  (`highlight`), plocha za portrétem. Žlutá nikdy není barva textu na bílé
-  (1,5 : 1), text na žluté je černý.
+- **Jediná barva je barva značky `brand`** (na `main` slunečná žlutá) —
+  lišta nahoře, hlavní tlačítka (`Button` primary), pruh s odhadem
+  a statistikami, zvýraznění slova (`highlight`), plocha za portrétem.
+  Nikdy není barva textu na bílé; text na ní je černý, tlumený
+  `brand-ink-muted`. Varianta barvy = jen hodnoty `--color-brand*`
+  v `app/globals.css` a barva tečky v `app/opengraph-image.tsx`.
 - Fotografie — nabídky i portrét — se nikdy neodbarvují (přání klienta).
 - `danger` jen pro chyby formulářů.
 - Grafické motivy: čtvercová tečka z loga (`eyebrow`), kóta
