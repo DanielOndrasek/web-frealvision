@@ -28,7 +28,7 @@ export default function OpengraphImage() {
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: 16, fontSize: 24, color: "#B3B3B3", letterSpacing: 4, textTransform: "uppercase" }}>
-          <div style={{ width: 12, height: 12, background: "#FFD23F" }} />
+          <div style={{ width: 12, height: 12, background: "#E8805F" }} />
           {site.name} · Realitní makléř
         </div>
 
