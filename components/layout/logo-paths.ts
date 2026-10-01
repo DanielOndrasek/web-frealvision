@@ -3,6 +3,9 @@
  * 4× zvětšený zdroj). Kreslí se barvou textu, takže stejná data slouží
  * na bílé i na černé ploše.
  *
+ * Kreslit vždy s `fill-rule: evenodd` — potrace dělá vnitřky písmen
+ * (R, e, a, o) jako samostatné podcesty a jen evenodd je vykrojí.
+ *
  * Souřadnice odpovídají viewBoxu `0 0 1117 141`. Slovní značka končí
  * na x ≈ 978, dovětek „s.r.o.“ leží za ní.
  */
