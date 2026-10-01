@@ -1,0 +1,253 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-05-29T08:00:00Z",
+  "adverts": [
+    {
+      "id": "3f2a9c10-1b4e-4d8a-9c2f-0a1b2c3d4e5f",
+      "status": "active",
+      "updated_at": "2026-05-28T14:32:00Z",
+      "url": "https://nemo1.cz/nemovitosti/3f2a9c10-1b4e-4d8a-9c2f-0a1b2c3d4e5f",
+      "broker": {
+        "id": "5bdbd99b-78c6-4a5e-9171-57b7a6e737c1",
+        "name": "Jan Novák",
+        "email": "jan.novak@example.cz",
+        "phone": "+420 777 123 456",
+        "avatar_url": "https://cdn.nemo1.cz/avatars/5bdbd99b-78c6-4a5e-9171-57b7a6e737c1.jpg"
+      },
+
+      "ad_type": "prodej",
+      "property_kind": "byt",
+      "property_category": "3+1",
+      "disposition": "3+1",
+      "title": "Prodej bytu 3+1, 78 m², Brno – Žabovřesky",
+      "description": "Slunný cihlový byt 3+1 po rekonstrukci s lodžií a sklepem. Klidná lokalita, výborná dostupnost MHD.",
+
+      "price": 7990000,
+      "currency": "CZK",
+      "price_on_request": false,
+      "commission": "Provize je zahrnuta v ceně",
+
+      "address": "Mozolky 1234/5, 616 00 Brno",
+      "street": "Mozolky",
+      "street_number": "1234",
+      "orientation_number": "5",
+      "city": "Brno",
+      "city_part": "Žabovřesky",
+      "zip": "61600",
+      "region": "Jihomoravský kraj",
+      "latitude": 49.2186,
+      "longitude": 16.5829,
+      "object_location": "Centrum obce",
+      "surroundings": "Parky, škola a obchody v docházkové vzdálenosti.",
+
+      "usable_area": 78,
+      "total_area": 82,
+      "built_up_area": null,
+      "land_area": null,
+      "balcony_area": null,
+      "terrace_area": null,
+      "loggia_area": 4,
+      "cellar_area": 3,
+      "pool_area": null,
+      "floor": 3,
+      "total_floors": 5,
+      "flat_floor": null,
+
+      "building_type": "Cihlová",
+      "building_condition": "Po rekonstrukci",
+      "ownership_type": "Osobní",
+      "house_type": null,
+      "energy_rating": "C",
+      "furnished": "Částečně",
+      "parking": "Parkování na ulici",
+      "garage_count": 0,
+      "parking_spots": 0,
+      "construction_year": 1965,
+      "reconstruction_year": 2022,
+      "approval_year": null,
+      "available_from": "2026-07-01",
+      "sale_start_date": "2026-05-20",
+      "construction_start_date": null,
+      "construction_end_date": null,
+
+      "balcony": false,
+      "terrace": false,
+      "loggia": true,
+      "elevator": true,
+      "cellar": true,
+      "garden": false,
+      "garage": false,
+      "pool": false,
+      "barrier_free": false,
+      "solar_panels": false,
+      "photovoltaics": false,
+      "low_energy": false,
+
+      "heating": ["ustredni_dalkove"],
+      "heating_body": ["radiatory"],
+      "hot_water_source": ["centralni_dalkovy_ohrev"],
+      "water": ["vodovod"],
+      "well_type": [],
+      "sewage": ["Kanalizace"],
+      "gas": ["plynovod"],
+      "telecomunication": ["internet", "optika", "kabelova_televize"],
+      "transport": ["mhd", "vlak"],
+      "access_road": ["asfaltova"],
+      "orientation": ["jih", "zapad"],
+
+      "photos": [
+        {
+          "url": "https://cdn.nemo1.cz/property-photos/000123/foto-01.jpg",
+          "description": "Obývací pokoj",
+          "category": "Obývací pokoj",
+          "is_cover": true
+        },
+        {
+          "url": "https://cdn.nemo1.cz/property-photos/000123/foto-02.jpg",
+          "description": "Kuchyně",
+          "category": "Kuchyně",
+          "is_cover": false
+        },
+        {
+          "url": "https://cdn.nemo1.cz/property-photos/000123/foto-03.jpg",
+          "description": "Koupelna",
+          "category": "Koupelna",
+          "is_cover": false
+        }
+      ],
+      "floor_plans": [
+        "https://cdn.nemo1.cz/property-photos/000123/pudorys.png"
+      ],
+      "video_url": null,
+      "youtube_url": "https://www.youtube.com/watch?v=PRIKLAD",
+      "virtual_tour_url": null,
+      "maps_panorama_url": null,
+      "energy_certificate_url": "https://cdn.nemo1.cz/property-photos/000123/penb.pdf",
+
+      "owner_name": null,
+      "owner_email": null,
+      "owner_phone": null
+    },
+    {
+      "id": "7c5b1e22-8a3d-4f6b-b1c9-2d3e4f5a6b7c",
+      "status": "active",
+      "updated_at": "2026-05-27T09:10:00Z",
+      "url": "https://nemo1.cz/nemovitosti/7c5b1e22-8a3d-4f6b-b1c9-2d3e4f5a6b7c",
+      "broker": {
+        "id": "1eb72595-5fd8-42bb-9cc8-11b4b53ab09b",
+        "name": "Petra Svobodová",
+        "email": "petra.svobodova@example.cz",
+        "phone": "+420 777 654 321",
+        "avatar_url": null
+      },
+
+      "ad_type": "pronajem",
+      "property_kind": "dum",
+      "property_category": null,
+      "disposition": "5+kk",
+      "title": "Pronájem rodinného domu 5+kk se zahradou, Říčany",
+      "description": "Moderní nízkoenergetický dům s tepelným čerpadlem, fotovoltaikou a velkou zahradou.",
+
+      "price": 38000,
+      "currency": "CZK",
+      "price_on_request": false,
+      "commission": null,
+
+      "address": "Na Stráni 7, 251 01 Říčany",
+      "street": "Na Stráni",
+      "street_number": "7",
+      "orientation_number": null,
+      "city": "Říčany",
+      "city_part": null,
+      "zip": "25101",
+      "region": "Středočeský kraj",
+      "latitude": 49.9921,
+      "longitude": 14.6536,
+      "object_location": "Klidná část",
+      "surroundings": "Les a rybník v okolí, občanská vybavenost v centru.",
+
+      "usable_area": 160,
+      "total_area": 180,
+      "built_up_area": 110,
+      "land_area": 650,
+      "balcony_area": null,
+      "terrace_area": 22,
+      "loggia_area": null,
+      "cellar_area": null,
+      "pool_area": null,
+      "floor": null,
+      "total_floors": 2,
+      "flat_floor": null,
+
+      "building_type": "Cihlová",
+      "building_condition": "Novostavba",
+      "ownership_type": "Osobní",
+      "house_type": "Patrový",
+      "energy_rating": "A",
+      "furnished": "Nevybaveno",
+      "parking": "Garáž + stání",
+      "garage_count": 1,
+      "parking_spots": 2,
+      "construction_year": 2024,
+      "reconstruction_year": null,
+      "approval_year": 2024,
+      "available_from": "2026-06-15",
+      "sale_start_date": null,
+      "construction_start_date": null,
+      "construction_end_date": null,
+
+      "balcony": false,
+      "terrace": true,
+      "loggia": false,
+      "elevator": false,
+      "cellar": false,
+      "garden": true,
+      "garage": true,
+      "pool": false,
+      "barrier_free": false,
+      "solar_panels": false,
+      "photovoltaics": true,
+      "low_energy": true,
+
+      "heating": ["tepelne_cerpadlo"],
+      "heating_body": ["podlahove_vytapeni"],
+      "hot_water_source": ["tepelne_cerpadlo"],
+      "water": ["vodovod", "studna"],
+      "well_type": ["vrtana_studna"],
+      "sewage": ["ČOV pro celý objekt"],
+      "gas": [],
+      "telecomunication": ["internet", "optika"],
+      "transport": ["autobus", "silnice"],
+      "access_road": ["asfaltova"],
+      "orientation": ["jihozapad"],
+
+      "photos": [
+        {
+          "url": "https://cdn.nemo1.cz/property-photos/000124/foto-01.jpg",
+          "description": "Pohled z ulice",
+          "category": "Exteriér",
+          "is_cover": true
+        },
+        {
+          "url": "https://cdn.nemo1.cz/property-photos/000124/foto-02.jpg",
+          "description": "Obývací prostor s kuchyní",
+          "category": "Obývací pokoj",
+          "is_cover": false
+        }
+      ],
+      "floor_plans": [
+        "https://cdn.nemo1.cz/property-photos/000124/pudorys-1np.png",
+        "https://cdn.nemo1.cz/property-photos/000124/pudorys-2np.png"
+      ],
+      "video_url": null,
+      "youtube_url": null,
+      "virtual_tour_url": "https://cdn.nemo1.cz/property-photos/000124/3d-prohlidka",
+      "maps_panorama_url": null,
+      "energy_certificate_url": null,
+
+      "owner_name": null,
+      "owner_email": null,
+      "owner_phone": null
+    }
+  ]
+}

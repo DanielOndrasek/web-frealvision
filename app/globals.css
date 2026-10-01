@@ -1,0 +1,158 @@
+@import "tailwindcss";
+
+/*
+ * Design tokeny. Barvy nikdy nepiš do komponent přímo — vždy přes tyhle
+ * proměnné.
+ *
+ * Web je černobílý, stejně jako logo F·Real Vision. Barvu na stránce nesou
+ * jen fotky nemovitostí — ty se nikdy neodbarvují, protože šedá fotka bytu
+ * prodává hůř. Portrét a dekorace jsou černobílé.
+ *
+ * Jediná funkční barva je `danger` pro chyby ve formulářích. Chyba je vždy
+ * i napsaná slovy, barva ji jen zvýrazní.
+ */
+@theme {
+  /* Text — kontrasty na bílé / na šedé #F4F4F4 */
+  --color-ink: #0a0a0a;          /* 19,8 : 1 */
+  --color-ink-muted: #474747;    /*  9,4 : 1 / 8,5 : 1 */
+  --color-ink-subtle: #666666;   /*  5,7 : 1 / 5,2 : 1 */
+  --color-ink-inverse: #ffffff;
+  /* Text na černé ploše */
+  --color-ink-inverse-muted: #b3b3b3; /* 9,6 : 1 na #0A0A0A */
+
+  /* Plochy */
+  --color-surface: #ffffff;
+  --color-surface-subtle: #f4f4f4;
+  --color-surface-footer: #0a0a0a;
+  --color-surface-dark: #0a0a0a;
+  --color-surface-darker: #000000;
+
+  /* Ohraničení — elevace se řeší linkou, ne stínem */
+  --color-line: #e5e5e5;
+  --color-line-strong: #c9c9c9;
+  --color-line-inverse: #2e2e2e;
+
+  /* Akce jsou černé. `accent-subtle` je tichý podklad pro hover. */
+  --color-accent: #0a0a0a;
+  --color-accent-hover: #2b2b2b;
+  --color-accent-text: #0a0a0a;
+  --color-accent-subtle: #f0f0f0;
+  --color-accent-strong: #e3e3e3;
+
+  /* Čtvercová tečka z loga („F·Real“) — hlavní grafický motiv webu */
+  --color-dot: #0a0a0a;
+
+  /* Stavy nabídky — rozlišené plochou, ne barvou */
+  --color-status-active: #ffffff;
+  --color-status-active-bg: #0a0a0a;
+  --color-status-reserved: #0a0a0a;
+  --color-status-reserved-bg: #ffffff;
+  --color-status-sold: #474747;
+  --color-status-sold-bg: #e5e5e5;
+
+  /* Chyby formulářů */
+  --color-danger: #b42318;       /* 6,0 : 1 */
+  --color-danger-bg: #fdf3f2;
+
+  /* Typografie: grotesk blízký logu, serifová kurzíva jen na akcenty */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-inter-tight), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-instrument), ui-serif, Georgia, serif;
+
+  /* Ostré hrany jako v logu — jen nepatrné zaoblení proti pixelování */
+  --radius-sm: 2px;
+  --radius-md: 2px;
+  --radius-lg: 2px;
+}
+
+@layer base {
+  html {
+    scroll-behavior: auto;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    letter-spacing: -0.03em;
+    text-wrap: balance;
+  }
+
+  body {
+    background: var(--color-surface);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Čísla, ceny, plochy a data musí být na mřížce */
+  .tnum,
+  time,
+  th,
+  td {
+    font-variant-numeric: tabular-nums;
+  }
+
+  ::selection {
+    background: var(--color-ink);
+    color: var(--color-ink-inverse);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent-text);
+    outline-offset: 2px;
+  }
+
+  /* Na černé ploše by černý obrys focusu zmizel */
+  .bg-surface-dark :focus-visible,
+  .bg-surface-footer :focus-visible {
+    outline-color: var(--color-ink-inverse);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/*
+ * Štítek sekce se čtvercovou tečkou z loga. Na tmavé ploše se tečka
+ * i text přebarví samy přes `currentColor`.
+ */
+@utility eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-ink-muted);
+
+  &::before {
+    content: "";
+    width: 0.5em;
+    height: 0.5em;
+    background: currentColor;
+    flex: none;
+  }
+}
+
+/*
+ * Rýsovací mřížka — jemné svislé linky po čtvrtinách šířky, jako na
+ * výkresu. Jen dekorace pod obsahem, nikdy pod textem v plné síle.
+ */
+@utility drafting-grid {
+  background-image: linear-gradient(
+    to right,
+    var(--color-line) 1px,
+    transparent 1px
+  );
+  background-size: 25% 100%;
+  background-position: -1px 0;
+}

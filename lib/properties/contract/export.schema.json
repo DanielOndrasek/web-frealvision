@@ -1,0 +1,291 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nemo1.cz/schemas/web-export/1.0/export.schema.json",
+  "title": "Nemo1 web export – inzeráty nemovitostí",
+  "description": "Kontrakt pro JSON export inzerátů z Nemo1 do webu realitní kanceláře. Verze 1.0.",
+  "type": "object",
+  "required": ["version", "adverts"],
+  "additionalProperties": false,
+  "properties": {
+    "version": {
+      "type": "string",
+      "const": "1.0",
+      "description": "Verze formátu."
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Čas vytvoření exportu (ISO 8601, UTC)."
+    },
+    "adverts": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/advert" }
+    }
+  },
+  "$defs": {
+    "nullableString": {
+      "type": ["string", "null"]
+    },
+    "nullableNumber": {
+      "type": ["number", "null"]
+    },
+    "nullableDate": {
+      "type": ["string", "null"],
+      "description": "Datum ve formátu YYYY-MM-DD nebo null.",
+      "pattern": "^$|^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "photo": {
+      "type": "object",
+      "required": ["url"],
+      "additionalProperties": false,
+      "properties": {
+        "url": { "type": "string", "format": "uri" },
+        "description": { "type": "string" },
+        "category": { "type": "string" },
+        "is_cover": { "type": "boolean" }
+      }
+    },
+    "broker": {
+      "type": "object",
+      "required": ["id", "name", "email", "phone", "avatar_url"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "name": { "$ref": "#/$defs/nullableString" },
+        "email": { "$ref": "#/$defs/nullableString" },
+        "phone": { "$ref": "#/$defs/nullableString" },
+        "avatar_url": { "$ref": "#/$defs/nullableString" }
+      }
+    },
+    "advert": {
+      "type": "object",
+      "required": [
+        "id",
+        "status",
+        "updated_at",
+        "ad_type",
+        "property_kind",
+        "broker"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Naše stálé, neměnné ID inzerátu (UUID z Nemo1). Klíč, podle kterého na své straně párujete aktualizace (upsert)."
+        },
+        "status": {
+          "type": "string",
+          "enum": ["active", "inactive"]
+        },
+        "updated_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "url": { "$ref": "#/$defs/nullableString" },
+
+        "ad_type": {
+          "type": "string",
+          "enum": ["prodej", "pronajem"]
+        },
+        "property_kind": {
+          "type": "string",
+          "enum": ["byt", "dum", "pozemek", "komercni", "ostatni"]
+        },
+        "property_category": { "$ref": "#/$defs/nullableString" },
+        "disposition": { "$ref": "#/$defs/nullableString" },
+        "title": { "$ref": "#/$defs/nullableString" },
+        "description": { "$ref": "#/$defs/nullableString" },
+        "broker": { "$ref": "#/$defs/broker" },
+
+        "price": { "$ref": "#/$defs/nullableNumber" },
+        "currency": { "type": "string" },
+        "price_on_request": { "type": "boolean" },
+        "commission": { "$ref": "#/$defs/nullableString" },
+
+        "address": { "$ref": "#/$defs/nullableString" },
+        "street": { "$ref": "#/$defs/nullableString" },
+        "street_number": { "$ref": "#/$defs/nullableString" },
+        "orientation_number": { "$ref": "#/$defs/nullableString" },
+        "city": { "$ref": "#/$defs/nullableString" },
+        "city_part": { "$ref": "#/$defs/nullableString" },
+        "zip": { "$ref": "#/$defs/nullableString" },
+        "region": { "$ref": "#/$defs/nullableString" },
+        "latitude": { "$ref": "#/$defs/nullableNumber" },
+        "longitude": { "$ref": "#/$defs/nullableNumber" },
+        "object_location": { "$ref": "#/$defs/nullableString" },
+        "surroundings": { "$ref": "#/$defs/nullableString" },
+
+        "usable_area": { "$ref": "#/$defs/nullableNumber" },
+        "total_area": { "$ref": "#/$defs/nullableNumber" },
+        "built_up_area": { "$ref": "#/$defs/nullableNumber" },
+        "land_area": { "$ref": "#/$defs/nullableNumber" },
+        "balcony_area": { "$ref": "#/$defs/nullableNumber" },
+        "terrace_area": { "$ref": "#/$defs/nullableNumber" },
+        "loggia_area": { "$ref": "#/$defs/nullableNumber" },
+        "cellar_area": { "$ref": "#/$defs/nullableNumber" },
+        "pool_area": { "$ref": "#/$defs/nullableNumber" },
+        "floor": { "$ref": "#/$defs/nullableNumber" },
+        "total_floors": { "$ref": "#/$defs/nullableNumber" },
+        "flat_floor": { "$ref": "#/$defs/nullableString" },
+
+        "building_type": { "$ref": "#/$defs/nullableString" },
+        "building_condition": { "$ref": "#/$defs/nullableString" },
+        "ownership_type": { "$ref": "#/$defs/nullableString" },
+        "house_type": { "$ref": "#/$defs/nullableString" },
+        "energy_rating": { "$ref": "#/$defs/nullableString" },
+        "furnished": { "$ref": "#/$defs/nullableString" },
+        "parking": { "$ref": "#/$defs/nullableString" },
+        "garage_count": { "$ref": "#/$defs/nullableNumber" },
+        "parking_spots": { "$ref": "#/$defs/nullableNumber" },
+        "construction_year": { "$ref": "#/$defs/nullableNumber" },
+        "reconstruction_year": { "$ref": "#/$defs/nullableNumber" },
+        "approval_year": { "$ref": "#/$defs/nullableNumber" },
+        "available_from": { "$ref": "#/$defs/nullableDate" },
+        "sale_start_date": { "$ref": "#/$defs/nullableDate" },
+        "construction_start_date": { "$ref": "#/$defs/nullableDate" },
+        "construction_end_date": { "$ref": "#/$defs/nullableDate" },
+
+        "balcony": { "type": "boolean" },
+        "terrace": { "type": "boolean" },
+        "loggia": { "type": "boolean" },
+        "elevator": { "type": "boolean" },
+        "cellar": { "type": "boolean" },
+        "garden": { "type": "boolean" },
+        "garage": { "type": "boolean" },
+        "pool": { "type": "boolean" },
+        "barrier_free": { "type": "boolean" },
+        "solar_panels": { "type": "boolean" },
+        "photovoltaics": { "type": "boolean" },
+        "low_energy": { "type": "boolean" },
+
+        "heating": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "waw", "plynovy_kondenzacni_kotel", "plynovy_kotel", "elektrokotel",
+              "tepelne_cerpadlo", "primotop", "infrapanel", "krbova_kamna", "krb",
+              "kotel_tuha_paliva", "kamna", "ustredni_dalkove", "centralni_dalkove",
+              "para_s_vymenikem", "akumulacni_kamna", "jine"
+            ]
+          }
+        },
+        "heating_body": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "waw", "podlahove_vytapeni", "radiatory", "primotop", "infrapanel",
+              "krbova_kamna", "krb", "kotel_tuha_paliva", "kamna", "klimatizace",
+              "akumulacni_kamna", "jine"
+            ]
+          }
+        },
+        "hot_water_source": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "plynovy_kondenzacni_kotel", "plynovy_kotel", "elektrokotel",
+              "tepelne_cerpadlo", "plynova_karma", "kotel_tuha_paliva",
+              "bojler_elektro", "bojler_plyn", "prutokovy_ohrivac",
+              "centralni_dalkovy_ohrev", "jine"
+            ]
+          }
+        },
+        "water": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "mistni_zdroj_vody", "vodovod", "dalkovy_vodovod", "studna",
+              "retencni_nadrz_destova_voda", "rozvod_studene_teple", "zdroj_cely_objekt"
+            ]
+          }
+        },
+        "well_type": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["vrtana_studna", "kopana_studna"]
+          }
+        },
+        "sewage": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["Kanalizace", "ČOV pro celý objekt", "Septik", "Jímka", "Trativod"]
+          }
+        },
+        "gas": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["plynovod", "individualni"]
+          }
+        },
+        "telecomunication": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "telefon", "internet", "satelit", "kabelova_televize",
+              "kabelove_rozvody", "ostatni", "adsl", "vdsl", "optika", "vzduchem"
+            ]
+          }
+        },
+        "transport": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["vlak", "dalnice", "silnice", "mhd", "autobus"]
+          }
+        },
+        "access_road": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "betonova", "dlazdena", "asfaltova", "neupravena",
+              "zpevnena", "sterk", "sotolina", "neni"
+            ]
+          }
+        },
+        "orientation": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "sever", "jih", "vychod", "zapad",
+              "severovychod", "severozapad", "jihovychod", "jihozapad"
+            ]
+          }
+        },
+
+        "photos": {
+          "type": "array",
+          "items": {
+            "oneOf": [
+              { "type": "string", "format": "uri" },
+              { "$ref": "#/$defs/photo" }
+            ]
+          }
+        },
+        "floor_plans": {
+          "type": "array",
+          "items": { "type": "string", "format": "uri" }
+        },
+        "video_url": { "$ref": "#/$defs/nullableString" },
+        "youtube_url": { "$ref": "#/$defs/nullableString" },
+        "virtual_tour_url": { "$ref": "#/$defs/nullableString" },
+        "maps_panorama_url": { "$ref": "#/$defs/nullableString" },
+        "energy_certificate_url": { "$ref": "#/$defs/nullableString" },
+
+        "owner_name": { "$ref": "#/$defs/nullableString" },
+        "owner_email": { "$ref": "#/$defs/nullableString" },
+        "owner_phone": { "$ref": "#/$defs/nullableString" }
+      }
+    }
+  }
+}

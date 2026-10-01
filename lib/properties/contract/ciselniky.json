@@ -1,0 +1,135 @@
+{
+  "_poznamka": "Povolené hodnoty pro výčtová pole. Pole typu string[] posílejte jako pole těchto 'value' (slugů). 'label' je jen český popisek pro orientaci. Hodnoty mimo seznam při importu zahodíme. Výjimka: 'sewage' používá přímo české texty z 'value'.",
+
+  "ad_type": [
+    { "value": "prodej", "label": "Prodej" },
+    { "value": "pronajem", "label": "Pronájem" }
+  ],
+
+  "property_kind": [
+    { "value": "byt", "label": "Byt" },
+    { "value": "dum", "label": "Dům" },
+    { "value": "pozemek", "label": "Pozemek" },
+    { "value": "komercni", "label": "Komerční" },
+    { "value": "ostatni", "label": "Ostatní" }
+  ],
+
+  "heating": [
+    { "value": "waw", "label": "WAW" },
+    { "value": "plynovy_kondenzacni_kotel", "label": "Plynový kondenzační kotel" },
+    { "value": "plynovy_kotel", "label": "Plynový kotel" },
+    { "value": "elektrokotel", "label": "Elektrokotel" },
+    { "value": "tepelne_cerpadlo", "label": "Tepelné čerpadlo" },
+    { "value": "primotop", "label": "Přímotop" },
+    { "value": "infrapanel", "label": "Infrapanel" },
+    { "value": "krbova_kamna", "label": "Krbová kamna" },
+    { "value": "krb", "label": "Krb" },
+    { "value": "kotel_tuha_paliva", "label": "Kotel na tuhá paliva" },
+    { "value": "kamna", "label": "Kamna" },
+    { "value": "ustredni_dalkove", "label": "Ústřední dálkové" },
+    { "value": "centralni_dalkove", "label": "Centrální dálkové" },
+    { "value": "para_s_vymenikem", "label": "Pára s výměníkem" },
+    { "value": "akumulacni_kamna", "label": "Akumulační kamna" },
+    { "value": "jine", "label": "Jiné" }
+  ],
+
+  "heating_body": [
+    { "value": "waw", "label": "WAW" },
+    { "value": "podlahove_vytapeni", "label": "Podlahové vytápění" },
+    { "value": "radiatory", "label": "Radiátory" },
+    { "value": "primotop", "label": "Přímotop" },
+    { "value": "infrapanel", "label": "Infrapanel" },
+    { "value": "krbova_kamna", "label": "Krbová kamna" },
+    { "value": "krb", "label": "Krb" },
+    { "value": "kotel_tuha_paliva", "label": "Kotel na tuhá paliva" },
+    { "value": "kamna", "label": "Kamna" },
+    { "value": "klimatizace", "label": "Klimatizace" },
+    { "value": "akumulacni_kamna", "label": "Akumulační kamna" },
+    { "value": "jine", "label": "Jiné" }
+  ],
+
+  "hot_water_source": [
+    { "value": "plynovy_kondenzacni_kotel", "label": "Plynový kondenzační kotel" },
+    { "value": "plynovy_kotel", "label": "Plynový kotel" },
+    { "value": "elektrokotel", "label": "Elektrokotel" },
+    { "value": "tepelne_cerpadlo", "label": "Tepelné čerpadlo" },
+    { "value": "plynova_karma", "label": "Plynová karma" },
+    { "value": "kotel_tuha_paliva", "label": "Kotel na tuhá paliva" },
+    { "value": "bojler_elektro", "label": "Bojler - elektro" },
+    { "value": "bojler_plyn", "label": "Bojler - plyn" },
+    { "value": "prutokovy_ohrivac", "label": "Průtokový ohřívač" },
+    { "value": "centralni_dalkovy_ohrev", "label": "Centrální dálkový ohřev" },
+    { "value": "jine", "label": "Jiné" }
+  ],
+
+  "water": [
+    { "value": "mistni_zdroj_vody", "label": "Místní zdroj vody" },
+    { "value": "vodovod", "label": "Vodovod" },
+    { "value": "dalkovy_vodovod", "label": "Vodovod (dálkový)" },
+    { "value": "studna", "label": "Studna" },
+    { "value": "retencni_nadrz_destova_voda", "label": "Retenční nádrž na dešťovou vodu" },
+    { "value": "rozvod_studene_teple", "label": "Rozvod studené a teplé vody" },
+    { "value": "zdroj_cely_objekt", "label": "Zdroj pro celý objekt" }
+  ],
+
+  "well_type": [
+    { "value": "vrtana_studna", "label": "Vrtaná studna" },
+    { "value": "kopana_studna", "label": "Kopaná studna" }
+  ],
+
+  "sewage": [
+    { "value": "Kanalizace", "label": "Kanalizace" },
+    { "value": "ČOV pro celý objekt", "label": "ČOV pro celý objekt" },
+    { "value": "Septik", "label": "Septik" },
+    { "value": "Jímka", "label": "Jímka" },
+    { "value": "Trativod", "label": "Trativod" }
+  ],
+
+  "gas": [
+    { "value": "plynovod", "label": "Plynovod" },
+    { "value": "individualni", "label": "Individuální" }
+  ],
+
+  "telecomunication": [
+    { "value": "telefon", "label": "Telefon" },
+    { "value": "internet", "label": "Internet" },
+    { "value": "satelit", "label": "Satelit" },
+    { "value": "kabelova_televize", "label": "Kabelová televize" },
+    { "value": "kabelove_rozvody", "label": "Kabelové rozvody" },
+    { "value": "ostatni", "label": "Ostatní" },
+    { "value": "adsl", "label": "ADSL" },
+    { "value": "vdsl", "label": "VDSL" },
+    { "value": "optika", "label": "Optika" },
+    { "value": "vzduchem", "label": "Vzduchem" }
+  ],
+
+  "transport": [
+    { "value": "vlak", "label": "Vlak" },
+    { "value": "dalnice", "label": "Dálnice" },
+    { "value": "silnice", "label": "Silnice" },
+    { "value": "mhd", "label": "MHD" },
+    { "value": "autobus", "label": "Autobus" }
+  ],
+
+  "access_road": [
+    { "value": "betonova", "label": "Betonová" },
+    { "value": "dlazdena", "label": "Dlážděná" },
+    { "value": "asfaltova", "label": "Asfaltová" },
+    { "value": "neupravena", "label": "Neupravená" },
+    { "value": "zpevnena", "label": "Zpevněná" },
+    { "value": "sterk", "label": "Štěrk" },
+    { "value": "sotolina", "label": "Šotolina" },
+    { "value": "neni", "label": "Není příjezdová komunikace" }
+  ],
+
+  "orientation": [
+    { "value": "sever", "label": "Sever" },
+    { "value": "jih", "label": "Jih" },
+    { "value": "vychod", "label": "Východ" },
+    { "value": "zapad", "label": "Západ" },
+    { "value": "severovychod", "label": "Severovýchod" },
+    { "value": "severozapad", "label": "Severozápad" },
+    { "value": "jihovychod", "label": "Jihovýchod" },
+    { "value": "jihozapad", "label": "Jihozápad" }
+  ]
+}
