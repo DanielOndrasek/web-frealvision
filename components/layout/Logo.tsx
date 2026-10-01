@@ -20,8 +20,9 @@ export function Wordmark({
       aria-hidden
       className={cn("block fill-current", className)}
     >
-      <path d={LOGO_WORDMARK} />
-      {withSuffix ? <path d={LOGO_SUFFIX} /> : null}
+      {/* evenodd vykrajuje vnitřky písmen (R, e, a, o) — bez něj jsou plné */}
+      <path d={LOGO_WORDMARK} fillRule="evenodd" />
+      {withSuffix ? <path d={LOGO_SUFFIX} fillRule="evenodd" /> : null}
     </svg>
   );
 }

@@ -33,7 +33,7 @@ export default function OpengraphImage() {
         </div>
 
         <svg width="1040" height="144" viewBox="4 4 975 135" fill="#FFFFFF">
-          <path d={LOGO_WORDMARK} />
+          <path d={LOGO_WORDMARK} fillRule="evenodd" />
         </svg>
 
         <div style={{ display: "flex", alignItems: "center", width: "100%" }}>
