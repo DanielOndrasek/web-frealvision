@@ -53,12 +53,12 @@
    * Barva značky — jediná barva webu. Barevná varianta webu se mění jen
    * tady (a v app/opengraph-image.tsx, který CSS proměnné nečte).
    *
-   * Slunečná žlutá: černý text na ní 13,7 : 1, tlumený 6,4 : 1.
+   * Nebeská modrá — navazuje na košili na portrétu: černý text na ní 11,8 : 1, tlumený 6,5 : 1.
    */
-  --color-brand: #ffd23f;
-  --color-brand-strong: #f5c21a;   /* hover */
-  --color-brand-soft: #fff6d6;     /* světlý podklad */
-  --color-brand-ink-muted: #474747; /* tlumený text na barvě značky */
+  --color-brand: #9ccdf5;
+  --color-brand-strong: #7dbbef;   /* hover */
+  --color-brand-soft: #ebf5fe;     /* světlý podklad */
+  --color-brand-ink-muted: #3d3d3d; /* tlumený text na barvě značky */
 
   /* Stavy nabídky — rozlišené plochou, ne barvou */
   --color-status-active: #ffffff;
