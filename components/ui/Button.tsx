@@ -10,15 +10,16 @@ const base =
   "disabled:pointer-events-none disabled:opacity-50";
 
 const variants: Record<Variant, string> = {
-  // Hlavní akce: plná černá
-  primary: "bg-accent text-ink-inverse hover:bg-accent-hover",
+  // Hlavní výzva: žlutá plocha, černý text — nejjasnější místo stránky
+  primary: "bg-sun text-ink hover:bg-sun-strong",
+  // Plná černá: odeslání formuláře, akce na žluté ploše
   solid: "bg-accent text-ink-inverse hover:bg-accent-hover",
   // Vedlejší akce: černý obrys, při najetí se vyplní
   secondary: "border border-ink bg-transparent text-ink hover:bg-ink hover:text-ink-inverse",
   ghost: "text-ink underline-offset-4 hover:underline",
   // Obrysové tlačítko na černé ploše nebo přes fotku
   onDark: "border border-white/60 text-white hover:border-white hover:bg-white hover:text-ink",
-  // Plné bílé tlačítko na černé ploše
+  // Plné bílé tlačítko na tmavé ploše
   inverse: "bg-surface text-ink hover:bg-accent-strong",
 };
 

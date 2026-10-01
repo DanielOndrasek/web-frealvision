@@ -35,14 +35,19 @@ Nepřidávej Supabase, Prisma ani žádné úložiště.
 
 ---
 
-## Vizuál — černobílý
+## Vizuál — černobílý základ, žlutá pro rozjasnění
 
-- Barvy jen přes tokeny v `app/globals.css`. Barvu na webu nesou **jen fotky
-  nabídek** — ty se nikdy neodbarvují. Portrét a dekorace jsou černobílé.
-- Jediná funkční barva je `danger` (chyby formulářů).
-- Grafické motivy: čtvercová tečka z loga (`eyebrow`, `bg-dot`), kóta
+- Barvy jen přes tokeny v `app/globals.css`. Základ je černobílý jako logo,
+  plochy mají teplý papírový tón (`surface-subtle`), ne studenou šedou.
+- **Jediná barva je slunečná žlutá `sun`** — lišta nahoře, hlavní tlačítka
+  (`Button` primary), pruh s odhadem a statistikami, zvýraznění slova
+  (`highlight`), plocha za portrétem. Žlutá nikdy není barva textu na bílé
+  (1,5 : 1), text na žluté je černý.
+- Fotografie — nabídky i portrét — se nikdy neodbarvují (přání klienta).
+- `danger` jen pro chyby formulářů.
+- Grafické motivy: čtvercová tečka z loga (`eyebrow`), kóta
   (`components/ui/Dimension.tsx`), ořezové značky (`CropMarks`), rýsovací
-  mřížka (`drafting-grid`), výkres domu v úvodu (`ElevationDrawing`).
+  mřížka (`drafting-grid`), výkres domu (`ElevationDrawing`).
 - Písma: Inter Tight (nadpisy), Inter (text), Instrument Serif kurzívou
   jen na jednotlivá slova a pořadová čísla.
 - Ostré hrany: rádiusy 2 px, tlačítka bez zaoblení.

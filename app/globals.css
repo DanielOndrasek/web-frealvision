@@ -4,17 +4,23 @@
  * Design tokeny. Barvy nikdy nepiš do komponent přímo — vždy přes tyhle
  * proměnné.
  *
- * Web je černobílý, stejně jako logo F·Real Vision. Barvu na stránce nesou
- * jen fotky nemovitostí — ty se nikdy neodbarvují, protože šedá fotka bytu
- * prodává hůř. Portrét a dekorace jsou černobílé.
+ * Základ je černobílý jako logo F·Real Vision, s teplým papírovým tónem
+ * místo studené šedé. Web rozjasňuje jediná barva: slunečná žlutá `sun`
+ * — lišta nahoře, hlavní tlačítka, pruh s odhadem, zvýraznění.
  *
- * Jediná funkční barva je `danger` pro chyby ve formulářích. Chyba je vždy
- * i napsaná slovy, barva ji jen zvýrazní.
+ * Žlutá na bílé nesplňuje kontrast pro text (1,5 : 1), proto je vždy jen
+ * plocha, linka nebo velký dekorativní znak. Text na žluté je černý
+ * (13,7 : 1).
+ *
+ * Fotografie — nabídky i portrét — se nikdy neodbarvují.
+ *
+ * `danger` je jen pro chyby ve formulářích. Chyba je vždy i napsaná
+ * slovy, barva ji jen zvýrazní.
  */
 @theme {
-  /* Text — kontrasty na bílé / na šedé #F4F4F4 */
+  /* Text — kontrasty na bílé / na papíru #F7F5F0 */
   --color-ink: #0a0a0a;          /* 19,8 : 1 */
-  --color-ink-muted: #474747;    /*  9,4 : 1 / 8,5 : 1 */
+  --color-ink-muted: #474747;    /*  9,4 : 1 / 8,6 : 1, na žluté 6,4 : 1 */
   --color-ink-subtle: #666666;   /*  5,7 : 1 / 5,2 : 1 */
   --color-ink-inverse: #ffffff;
   /* Text na černé ploše */
@@ -22,14 +28,15 @@
 
   /* Plochy */
   --color-surface: #ffffff;
-  --color-surface-subtle: #f4f4f4;
+  /* Teplý papír místo studené šedé — plochy působí světleji */
+  --color-surface-subtle: #f7f5f0;
   --color-surface-footer: #0a0a0a;
   --color-surface-dark: #0a0a0a;
   --color-surface-darker: #000000;
 
   /* Ohraničení — elevace se řeší linkou, ne stínem */
-  --color-line: #e5e5e5;
-  --color-line-strong: #c9c9c9;
+  --color-line: #e8e5de;
+  --color-line-strong: #cdc9bf;
   --color-line-inverse: #2e2e2e;
 
   /* Akce jsou černé. `accent-subtle` je tichý podklad pro hover. */
@@ -42,13 +49,18 @@
   /* Čtvercová tečka z loga („F·Real“) — hlavní grafický motiv webu */
   --color-dot: #0a0a0a;
 
+  /* Slunečná žlutá — jediná barva webu. Jen plochy a linky, nikdy text. */
+  --color-sun: #ffd23f;
+  --color-sun-strong: #f5c21a;   /* hover */
+  --color-sun-soft: #fff6d6;     /* světlý podklad */
+
   /* Stavy nabídky — rozlišené plochou, ne barvou */
   --color-status-active: #ffffff;
   --color-status-active-bg: #0a0a0a;
   --color-status-reserved: #0a0a0a;
   --color-status-reserved-bg: #ffffff;
   --color-status-sold: #474747;
-  --color-status-sold-bg: #e5e5e5;
+  --color-status-sold-bg: #e8e5de;
 
   /* Chyby formulářů */
   --color-danger: #b42318;       /* 6,0 : 1 */
@@ -94,8 +106,8 @@
   }
 
   ::selection {
-    background: var(--color-ink);
-    color: var(--color-ink-inverse);
+    background: var(--color-sun);
+    color: var(--color-ink);
   }
 
   :focus-visible {
@@ -121,8 +133,8 @@
 }
 
 /*
- * Štítek sekce se čtvercovou tečkou z loga. Na tmavé ploše se tečka
- * i text přebarví samy přes `currentColor`.
+ * Štítek sekce se čtvercovou tečkou z loga — žlutou, s obrysem v barvě
+ * textu, aby byla vidět na bílé, na žluté i na černé.
  */
 @utility eyebrow {
   display: flex;
@@ -136,9 +148,11 @@
 
   &::before {
     content: "";
-    width: 0.5em;
-    height: 0.5em;
-    background: currentColor;
+    width: 0.6em;
+    height: 0.6em;
+    background: var(--color-sun);
+    outline: 1px solid currentColor;
+    outline-offset: -1px;
     flex: none;
   }
 }
@@ -155,4 +169,20 @@
   );
   background-size: 25% 100%;
   background-position: -1px 0;
+}
+
+/*
+ * Zvýraznění žlutým fixem — spodní část řádku podbarvená žlutou, text nad
+ * ní zůstává černý. Pro jedno slovo v nadpisu, ne pro celé věty.
+ */
+@utility highlight {
+  background-image: linear-gradient(
+    transparent 62%,
+    var(--color-sun) 62%,
+    var(--color-sun) 92%,
+    transparent 92%
+  );
+  padding-inline: 0.06em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
 }

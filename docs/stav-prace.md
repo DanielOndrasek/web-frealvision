@@ -18,7 +18,7 @@ Poslední aktualizace: 1. 10. 2026.
 ## Doplněno 1. 10. 2026
 
 - Telefon, e-mail a portrét (`public/foto/frantisek-kroupa.webp`, výřez 4 : 5
-  z dodané fotky, odbarvuje se až na webu).
+  z dodané fotky, na webu barevně).
 - Text o Františkovi (`lib/profile.ts`) — převedený do první osoby, obsah beze
   změny. Vymyšlený postup „Jak pracuji“ z první verze je pryč.
 - 26 referencí z profilu na archer-reality.cz (`content/recenze.json`).

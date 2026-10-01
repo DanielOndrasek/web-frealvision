@@ -6,8 +6,8 @@ import { site } from "@/lib/site";
 import { profile } from "@/lib/profile";
 
 /**
- * Úvod: velká typografie na rýsovací mřížce a vedle ní černobílý portrét
- * v ořezových značkách. Barvu na webu nesou až fotky nabídek pod ním.
+ * Úvod: velká typografie na rýsovací mřížce a vedle ní barevný portrét
+ * v ořezových značkách — jediná barva v jinak černobílém úvodu.
  */
 export function Hero() {
   return (
@@ -25,7 +25,7 @@ export function Hero() {
             </p>
             <h1 className="mt-7 text-[2.75rem] leading-[1.02] font-semibold sm:text-7xl">
               {profile.headline}{" "}
-              <em className="font-serif font-normal tracking-normal italic">
+              <em className="highlight font-serif font-normal tracking-normal italic">
                 {profile.headlineAccent}
               </em>
             </h1>
@@ -43,9 +43,13 @@ export function Hero() {
             </div>
           </div>
 
-          <CropMarks className="mx-auto w-full max-w-[440px] p-3 sm:p-4">
-            <Portrait priority />
-          </CropMarks>
+          {/* Žlutá plocha odsazená za portrétem — barva, která úvod rozjasní */}
+          <div className="relative mx-auto w-full max-w-[440px]">
+            <div aria-hidden className="absolute inset-0 translate-x-4 translate-y-4 bg-sun sm:translate-x-6 sm:translate-y-6" />
+            <CropMarks className="relative bg-surface p-3 sm:p-4">
+              <Portrait priority />
+            </CropMarks>
+          </div>
         </div>
       </Container>
     </section>
