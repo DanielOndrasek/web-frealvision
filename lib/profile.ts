@@ -2,38 +2,55 @@
  * Texty o makléři na jednom místě — úvodní stránka i stránka O mně
  * berou odsud.
  *
- * Koncept k odsouhlasení: záměrně bez čísel a tvrzení (roky praxe, počet
- * obchodů, lokality), dokud je makléř nepotvrdí. Doložitelná čísla patří
- * do `content/statistiky.json`, kde se ukazují i se zdrojem.
+ * Zdroj: text, který František dodal 1. 10. 2026 (původně ve třetí osobě,
+ * z profilu u Archer Reality). Tady je převedený do první osoby, aby
+ * ladil se zbytkem webu („Napište mi“, „Ozvu se“) — obsah ani tvrzení
+ * se neměnily.
  */
 export const profile = {
   headline: "Prodej nemovitosti s jasnou",
   /** Slovo sázené serifovou kurzívou — ozvěna „Vision“ z loga. */
   headlineAccent: "vizí.",
-  lead: "Jsem František Kroupa, realitní makléř. Provedu vás prodejem, koupí i pronájmem — od stanovení ceny přes prezentaci až po předání klíčů.",
+  /** Věta, kterou se František představuje. */
+  tagline: "Stratég, vyjednavač, marketér a profesionál s důrazem na detail.",
+  lead: "Stratég, vyjednavač, marketér a profesionál s důrazem na detail. Každý prodej stavím na promyšleném postupu a jasně nastaveném cíli.",
 
-  aboutTitle: "Každý obchod začíná jasným plánem.",
-  about: [
-    "Pomáhám lidem prodat, koupit nebo pronajmout nemovitost tak, aby v každé fázi věděli, co se děje a proč. Bez tlaku, bez zbytečných slibů a s důrazem na detail.",
-    "Na první schůzce spolu projdeme nemovitost, vaše cíle i časový rámec. Z toho vznikne plán — cena, prezentace, harmonogram — a ten pak dotáhnu až do předání klíčů.",
+  strategyTitle: "Strategie místo nahodilosti.",
+  strategy:
+    "Jsem analytik a stratég. Každý prodej stavím na promyšleném postupu, důsledném vyhodnocení situace a jasně nastaveném cíli. Neprodávám jen nemovitost — hledám nejlepší cestu k dosažení nejlepšího výsledku.",
+
+  /** Co do spolupráce přináší, v pořadí podle dodaného textu. */
+  qualities: [
+    {
+      title: "Technické uvažování a praktický pohled",
+      text: "Díky zkušenostem z vedení továrny na nábytek mám silné technické zázemí, smysl pro design, konstrukční řešení i funkčnost prostoru. Na nemovitost se proto dívám nejen obchodně, ale i prakticky a technicky.",
+    },
+    {
+      title: "Silné obchodní zkušenosti",
+      text: "Působení na pozicích obchodního ředitele několika firem mi dalo vyjednávací dovednosti, orientaci na výsledek a schopnost hájit zájmy klienta. Umím pracovat s argumentací i emocemi trhu tak, aby obchod vedl k úspěšnému výsledku.",
+    },
+    {
+      title: "Marketing, který zaujme",
+      text: "Zkušenosti z role kreativního ředitele eventové agentury mi přinesly smysl pro prezentaci, práci s emocí, vizí a celkovým dojmem. Vím, jak nemovitost odlišit, správně ji představit trhu a zvýšit její atraktivitu pro správného kupujícího.",
+    },
+    {
+      title: "Lidský přístup",
+      text: "Reality pro mě nejsou jen obchod. Za každou nemovitostí stojí konkrétní lidé, jejich životní příběhy i důležitá rozhodnutí. Proto kladu důraz na důvěru, otevřenou komunikaci a respekt.",
+    },
+    {
+      title: "Preciznost a důraz na detail",
+      text: "Jako vystudovaný violoncellista přináším do své práce disciplínu, soustředění, smysl pro detail i schopnost dovést jemnou a náročnou práci až do perfektního finále.",
+    },
   ],
 
-  process: [
-    {
-      title: "Konzultace a cena",
-      text: "Projdeme nemovitost a vaše záměry. Cenu stanovím z dat o skutečných prodejích v okolí, ne z inzertních přání.",
-    },
-    {
-      title: "Příprava a prezentace",
-      text: "Fotografie, půdorys a popis, který nemovitost ukáže v nejlepším světle. Inzerce tam, kde jsou vaši kupující.",
-    },
-    {
-      title: "Prohlídky a vyjednávání",
-      text: "Prohlídky organizuji a vedu sám. Zájemce prověřím a vyjednám pro vás co nejlepší podmínky.",
-    },
-    {
-      title: "Smlouvy a předání",
-      text: "Rezervační a kupní smlouva, úschova kupní ceny, předávací protokol. Jsem u toho až do předání klíčů.",
-    },
-  ],
+  summaryTitle: "Komplexní přístup",
+  summary:
+    "Spojuji analytické myšlení, technické znalosti, obchodní zkušenosti, marketingový přesah a precizní provedení. Díky tomu dávám klientům víc než běžné zprostředkování — strategicky vedenou spolupráci, která má jasný směr i výsledek.",
+
+  /**
+   * Pod referencemi. Říká, odkud jsou a že jde o výběr — reference na webu
+   * makléře nesmí vypadat jako úplný nezávislý přehled, když jím nejsou.
+   */
+  reviewsNote:
+    "Výběr z hodnocení klientů na mém profilu v realitní kanceláři Archer Reality. Delší recenze jsou zkrácené, vynechaný text značí […].",
 } as const;

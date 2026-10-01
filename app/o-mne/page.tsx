@@ -2,9 +2,11 @@ import type { Metadata } from "next";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
+import { CropMarks } from "@/components/ui/CropMarks";
 import { Portrait } from "@/components/about/Portrait";
+import { Qualities } from "@/components/about/Qualities";
+import { SummaryBand } from "@/components/about/SummaryBand";
 import { StatsBand } from "@/components/home/StatsBand";
-import { Process } from "@/components/home/Process";
 import { ContactSection } from "@/components/layout/ContactSection";
 import { profile } from "@/lib/profile";
 import { site } from "@/lib/site";
@@ -13,7 +15,7 @@ import { JsonLd, breadcrumbSchema, realEstateAgentSchema } from "@/lib/seo/schem
 export const metadata: Metadata = {
   title: "O mně",
   description:
-    "František Kroupa, realitní makléř. Jak pracuji, co pro vás udělám a proč na jasném plánu záleží víc než na slibech.",
+    "František Kroupa, realitní makléř. Zkušenosti z vedení výroby, obchodu i marketingu — a důraz na detail, který vede k nejlepšímu výsledku.",
   alternates: { canonical: "/o-mne" },
 };
 
@@ -30,24 +32,22 @@ export default function AboutPage() {
 
       <section className="drafting-grid border-b border-line">
         <Container size="wide">
-          <div className="grid items-center gap-12 py-16 sm:py-24 lg:grid-cols-[1.1fr_0.9fr] lg:gap-24">
+          <div className="grid items-center gap-12 py-16 sm:py-24 lg:grid-cols-[1.2fr_0.8fr] lg:gap-24">
             <div>
               <p className="eyebrow">O mně</p>
               <h1 className="mt-6 text-5xl font-semibold sm:text-7xl sm:leading-[1.02]">
                 {site.name}
               </h1>
-              <p className="mt-4 text-sm font-semibold tracking-[0.16em] text-ink-subtle uppercase">
-                {site.tagline} · {site.company}
+              <p className="mt-6 max-w-xl font-serif text-2xl leading-snug italic sm:text-3xl">
+                {profile.tagline}
               </p>
 
               <h2 className="mt-12 text-2xl font-semibold sm:text-3xl">
-                {profile.aboutTitle}
+                {profile.strategyTitle}
               </h2>
-              <div className="mt-6 flex max-w-xl flex-col gap-5 text-lg leading-relaxed text-ink-muted">
-                {profile.about.map((paragraph) => (
-                  <p key={paragraph}>{paragraph}</p>
-                ))}
-              </div>
+              <p className="mt-5 max-w-xl text-lg leading-relaxed text-ink-muted">
+                {profile.strategy}
+              </p>
 
               <div className="mt-10 flex flex-wrap gap-3">
                 <Button href="/kontakt" size="lg">
@@ -59,22 +59,22 @@ export default function AboutPage() {
               </div>
             </div>
 
-            <Portrait priority className="mx-auto w-full max-w-[460px]" />
+            <CropMarks className="mx-auto w-full max-w-[440px] p-3 sm:p-4">
+              <Portrait priority />
+            </CropMarks>
           </div>
         </Container>
       </section>
 
       <StatsBand />
 
-      <Section
-        eyebrow="Jak pracuji"
-        title="Od první schůzky po předání klíčů"
-        containerSize="wide"
-      >
-        <Process />
+      <Section eyebrow="Co přináším" title="Zkušenosti, které se při prodeji hodí" containerSize="wide">
+        <Qualities />
       </Section>
 
-      <ContactSection title="Pojďme se potkat" />
+      <SummaryBand />
+
+      <ContactSection tone="default" title="Pojďme se potkat" />
     </>
   );
 }

@@ -104,6 +104,7 @@ export function realEstateAgentSchema() {
     telephone: site.phone,
     email: site.email,
     description: site.description,
+    ...(site.portrait ? { image: `${site.url}${site.portrait}` } : {}),
     knowsLanguage: "cs",
     parentOrganization: { "@type": "Organization", name: site.company },
     // Profily na sítích — Google podle nich propojí web s osobou

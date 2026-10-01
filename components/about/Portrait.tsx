@@ -3,9 +3,9 @@ import { site } from "@/lib/site";
 import { cn } from "@/lib/cn";
 
 /**
- * Černobílý portrét makléře. Dokud fotka není, stojí na jejím místě
- * monogram na černé ploše — stejný poměr stran, takže se rozvržení po
- * doplnění fotky nepohne.
+ * Černobílý portrét makléře. Soubor je barevný, odbarvuje ho až CSS —
+ * kdyby se vizuál změnil, fotka se nemusí měnit. Bez fotky stojí na jejím
+ * místě monogram ve stejném poměru stran.
  */
 export function Portrait({
   className,
@@ -28,7 +28,7 @@ export function Portrait({
           fill
           priority={priority}
           sizes="(max-width: 1024px) 90vw, 520px"
-          className="object-cover grayscale"
+          className="object-cover contrast-[1.05] grayscale"
         />
       ) : (
         <div aria-hidden className="drafting-grid absolute inset-0 grid place-items-center opacity-100 [--color-line:#1f1f1f]">

@@ -56,8 +56,9 @@ Nepřidávej Supabase, Prisma ani žádné úložiště.
   z profilu makléře. Bez dat se sekce na webu nevykreslí.
 - Hodnocení z vlastního webu nedávej do structured data (`AggregateRating`) —
   Google je bere jako self-serving.
-- Texty v `lib/profile.ts` jsou koncept bez čísel a tvrzení. Fakta (roky
-  praxe, lokality, počty obchodů) doplňuj jen potvrzená makléřem.
+- Texty v `lib/profile.ts` vycházejí z textu, který dodal makléř. Nová fakta
+  (roky praxe, lokality, počty obchodů) doplňuj jen potvrzená jím.
+- Reference jsou doslovné. Zkrácený text značí `[…]`, nic se nedopisuje.
 
 ---
 

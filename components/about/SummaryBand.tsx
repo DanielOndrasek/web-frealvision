@@ -1,0 +1,20 @@
+import { Container } from "@/components/ui/Container";
+import { Dimension } from "@/components/ui/Dimension";
+import { profile } from "@/lib/profile";
+
+/** Závěrečné shrnutí na černém pruhu — jedna věta velkým písmem. */
+export function SummaryBand() {
+  return (
+    <section className="bg-surface-dark text-ink-inverse">
+      <Container size="wide">
+        <div className="py-16 sm:py-24">
+          <p className="eyebrow text-ink-inverse-muted">{profile.summaryTitle}</p>
+          <p className="mt-8 max-w-5xl font-display text-2xl leading-snug font-medium tracking-[-0.02em] text-balance sm:text-4xl">
+            {profile.summary}
+          </p>
+        </div>
+        <Dimension inverse className="pb-10" />
+      </Container>
+    </section>
+  );
+}

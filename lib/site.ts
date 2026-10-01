@@ -21,17 +21,17 @@ export const site = {
   url,
   locale: "cs_CZ",
   description:
-    "Realitní makléř František Kroupa — prodej a pronájem bytů, domů a pozemků s jasnou strategií, pečlivou přípravou a osobním přístupem.",
+    "Realitní makléř František Kroupa — stratég, vyjednavač a marketér s důrazem na detail. Prodej, koupě i pronájem bytů, domů a pozemků.",
 
-  phone: "+420 000 000 000",
-  phoneHref: "tel:+420000000000",
-  email: "info@example.cz",
+  phone: "+420 777 990 900",
+  phoneHref: "tel:+420777990900",
+  email: "fr.kroupa@gmail.com",
 
   /**
-   * Portrét do sekce O mně. Dokud není, ukazuje se místo fotky monogram.
-   * Cesta do `public/`, fotka v poměru 4 : 5.
+   * Portrét, cesta do `public/`, fotka v poměru 4 : 5. Odbarvuje se až
+   * na webu (CSS), soubor zůstává barevný. Bez fotky se ukáže monogram.
    */
-  portrait: null as string | null,
+  portrait: "/foto/frantisek-kroupa.webp" as string | null,
 
   /** Údaje firmy do patičky a zásad zpracování osobních údajů. */
   legal: {

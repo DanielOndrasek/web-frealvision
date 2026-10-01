@@ -4,13 +4,14 @@ import { Section } from "@/components/ui/Section";
 import { Hero } from "@/components/home/Hero";
 import { StatsBand } from "@/components/home/StatsBand";
 import { AboutTeaser } from "@/components/home/AboutTeaser";
-import { Process } from "@/components/home/Process";
+import { Qualities } from "@/components/about/Qualities";
 import { ValuationCta } from "@/components/home/ValuationCta";
 import { ContactSection } from "@/components/layout/ContactSection";
 import { PropertyGrid } from "@/components/property/PropertyGrid";
 import { ReviewList } from "@/components/reviews/ReviewList";
 import { getListings } from "@/lib/properties/feed";
 import { getClientReviews } from "@/lib/content/load";
+import { profile } from "@/lib/profile";
 import { JsonLd, realEstateAgentSchema } from "@/lib/seo/schema";
 
 // Stejně jako feed nabídek — viz lib/properties/feed.ts.
@@ -19,7 +20,7 @@ export const revalidate = 300;
 export const metadata: Metadata = {
   title: "Realitní makléř — prodej bytů, domů a pozemků",
   description:
-    "Prodej, koupě i pronájem nemovitosti s jasným plánem. Odhad ceny zdarma, profesionální prezentace a péče až do předání klíčů.",
+    "František Kroupa — stratég, vyjednavač a marketér s důrazem na detail. Prodej, koupě i pronájem nemovitosti s jasným plánem. Odhad ceny zdarma.",
   alternates: { canonical: "/" },
 };
 
@@ -64,11 +65,11 @@ export default async function HomePage() {
 
       <Section
         index="02"
-        eyebrow="Jak pracuji"
-        title="Od první schůzky po předání klíčů"
+        eyebrow="Co přináším"
+        title="Víc než běžné zprostředkování"
         containerSize="wide"
       >
-        <Process />
+        <Qualities />
       </Section>
 
       {reviews.length ? (
@@ -85,6 +86,7 @@ export default async function HomePage() {
           }
         >
           <ReviewList reviews={reviews.slice(0, REVIEWS_ON_HOME)} />
+          <p className="mt-4 text-sm text-ink-subtle">{profile.reviewsNote}</p>
         </Section>
       ) : null}
 

@@ -6,6 +6,7 @@ import { ReviewList } from "@/components/reviews/ReviewList";
 import { ContactSection } from "@/components/layout/ContactSection";
 import { getClientReviews } from "@/lib/content/load";
 import { JsonLd, breadcrumbSchema } from "@/lib/seo/schema";
+import { profile } from "@/lib/profile";
 
 export const metadata: Metadata = {
   title: "Reference klientů",
@@ -42,7 +43,10 @@ export default async function ReferencesPage() {
       <section className="bg-surface-subtle py-16 sm:py-24">
         <Container size="wide">
           {reviews.length ? (
-            <ReviewList reviews={reviews} />
+            <>
+              <ReviewList reviews={reviews} />
+              <p className="mt-4 text-sm text-ink-subtle">{profile.reviewsNote}</p>
+            </>
           ) : (
             <p className="border border-dashed border-line-strong px-6 py-16 text-center text-ink-muted">
               Reference právě doplňujeme.

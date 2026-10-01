@@ -1,13 +1,13 @@
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { CropMarks } from "@/components/ui/CropMarks";
+import { Portrait } from "@/components/about/Portrait";
 import { site } from "@/lib/site";
 import { profile } from "@/lib/profile";
-import { ElevationDrawing } from "./ElevationDrawing";
 
 /**
- * Úvod bez fotky na pozadí: velká typografie na rýsovací mřížce a vedle
- * ní výkres domu. Barvu na webu nesou až fotky nabídek pod ním.
+ * Úvod: velká typografie na rýsovací mřížce a vedle ní černobílý portrét
+ * v ořezových značkách. Barvu na webu nesou až fotky nabídek pod ním.
  */
 export function Hero() {
   return (
@@ -18,7 +18,7 @@ export function Hero() {
       />
 
       <Container size="wide">
-        <div className="grid items-center gap-14 py-16 sm:py-24 lg:grid-cols-[1.15fr_1fr] lg:gap-20">
+        <div className="grid items-center gap-12 py-14 sm:py-20 lg:grid-cols-[1.2fr_0.8fr] lg:gap-20">
           <div>
             <p className="eyebrow">
               {site.name} · {site.tagline}
@@ -43,8 +43,8 @@ export function Hero() {
             </div>
           </div>
 
-          <CropMarks className="hidden bg-surface p-6 sm:block sm:p-10">
-            <ElevationDrawing className="h-auto w-full text-ink" />
+          <CropMarks className="mx-auto w-full max-w-[440px] p-3 sm:p-4">
+            <Portrait priority />
           </CropMarks>
         </div>
       </Container>

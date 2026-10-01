@@ -1,25 +1,27 @@
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
-import { Portrait } from "@/components/about/Portrait";
+import { CropMarks } from "@/components/ui/CropMarks";
+import { ElevationDrawing } from "./ElevationDrawing";
 import { profile } from "@/lib/profile";
 
+/**
+ * „Strategie místo nahodilosti“ s výkresem domu — technický pohled na
+ * nemovitost je jedna z věcí, kterými se František představuje.
+ */
 export function AboutTeaser() {
   return (
     <section className="bg-surface-subtle py-16 sm:py-24">
       <Container size="wide">
-        <div className="grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-24">
-          <Portrait className="mx-auto w-full max-w-[460px]" />
-
-          <div>
+        <div className="grid items-center gap-12 lg:grid-cols-[1fr_1fr] lg:gap-24">
+          <div className="lg:order-2">
             <p className="eyebrow">O mně</p>
             <h2 className="mt-6 text-3xl font-semibold sm:text-5xl sm:leading-[1.08]">
-              {profile.aboutTitle}
+              {profile.strategyTitle}
             </h2>
 
             <div className="mt-7 flex max-w-xl flex-col gap-5 text-lg leading-relaxed text-ink-muted">
-              {profile.about.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
-              ))}
+              <p>{profile.strategy}</p>
+              <p>{profile.summary}</p>
             </div>
 
             <div className="mt-10">
@@ -28,6 +30,10 @@ export function AboutTeaser() {
               </Button>
             </div>
           </div>
+
+          <CropMarks className="hidden bg-surface p-8 sm:block sm:p-12 lg:order-1">
+            <ElevationDrawing className="h-auto w-full text-ink" />
+          </CropMarks>
         </div>
       </Container>
     </section>

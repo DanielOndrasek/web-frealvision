@@ -15,24 +15,39 @@ Poslední aktualizace: 1. 10. 2026.
   (`website-lead-webhook`) s podpisem, idempotencí a záchranou poptávky
   ke staženému inzerátu. Testy v `tests/`.
 
+## Doplněno 1. 10. 2026
+
+- Telefon, e-mail a portrét (`public/foto/frantisek-kroupa.webp`, výřez 4 : 5
+  z dodané fotky, odbarvuje se až na webu).
+- Text o Františkovi (`lib/profile.ts`) — převedený do první osoby, obsah beze
+  změny. Vymyšlený postup „Jak pracuji“ z první verze je pryč.
+- 26 referencí z profilu na archer-reality.cz (`content/recenze.json`).
+
 ## Chybí — web bez toho nejde spustit
 
-Lišta nahoře na webu je vypisuje, dokud nejsou doplněné. `npm run check`
-upozorní na prázdné reference a statistiky.
+Lišta nahoře na webu je vypisuje, dokud nejsou doplněné.
 
 | Co | Kam | Zdroj |
 |---|---|---|
-| Reference klientů — všechny ze slideru | `content/recenze.json` | profil na archer-reality.cz |
 | Statistiky | `content/statistiky.json` | profil na archer-reality.cz |
-| Telefon, e-mail | `lib/site.ts` | František |
 | IČO a sídlo F-Real Vision s.r.o. | `lib/site.ts` → `legal` | ARES |
-| Portrét (4 : 5, stačí barevný — web ho odbarví) | `public/foto/`, cesta do `lib/site.ts` → `portrait` | František |
 | Doména | `NEXT_PUBLIC_SITE_URL` ve Vercelu | František |
 | Napojení na Nemo1 | `NEMO1_INTEGRATION_ID`, `NEMO1_FEED_SECRET` | `docs/napojeni-nemo1.md` |
 | Odkazy na sociální sítě | `lib/site.ts` → `social` | František |
 
-Profil `https://www.archer-reality.cz/kroupafrantisek` se 1. 10. 2026 nedal
-stáhnout — síť prostředí, ve kterém web vznikal, doménu blokovala.
+## K rozhodnutí
+
+- **Negativní recenze Pavla Stupky** (Kladno, byty) na webu není. Je to jediná
+  záporná z 27. Jestli ji tam František chce, stačí ji doplnit do
+  `content/recenze.json`. Pod referencemi stojí, že jde o výběr z profilu.
+- **E-mail:** na webu je `fr.kroupa@gmail.com`. Adresa `@archer-reality.cz`
+  patří kanceláři, vlastní doména by působila lépe než Gmail.
+- **14 referencí je zkrácených** — slider na profilu ukazoval jen začátek
+  („číst dále“). Konec je označený `[…]`, nic není dopsané. Plné znění
+  doplnit u: Pavlovská, Břízek, Kafkovi, Ryšavá, Lebeda, Plachý, Kučerová,
+  Pulkrábková, Pírová, Kubíková, Čermák, Cao, Kalaš, Hamarová. U Záruby
+  skončil viditelný text podpisem — ověřit, jestli za ním nic není.
+- Texty recenzí jsou doslovné včetně překlepů a chybějící diakritiky.
 
 ## Formát referencí
 
@@ -61,8 +76,8 @@ je pořadí na webu. Formát statistik:
 
 ## K odsouhlasení
 
-- Texty v `lib/profile.ts` (úvod, O mně, postup spolupráce) jsou koncept
-  bez konkrétních tvrzení. František by je měl přečíst a doplnit fakta.
+- Převod textu o Františkovi do první osoby (`lib/profile.ts`) — ať si ho
+  přečte. Kdyby chtěl třetí osobu jako na profilu, je to úprava jednoho souboru.
 - Zásady zpracování osobních údajů jsou upravené ze šablony — před
   spuštěním je ať projde člověk, který za ně odpovídá.
 - Odhad pro nemajitele: šablona uváděla cenu 4 990 Kč, tady je
