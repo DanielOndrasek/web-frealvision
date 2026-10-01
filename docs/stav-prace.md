@@ -45,7 +45,7 @@ Lišta nahoře na webu je vypisuje, dokud nejsou doplněné.
 
 - **Negativní recenze Pavla Stupky** (Kladno, byty) na webu není. Je to jediná
   záporná z 27. Jestli ji tam František chce, stačí ji doplnit do
-  `content/recenze.json`. Pod referencemi stojí, že jde o výběr z profilu.
+  `content/recenze.json`.
 - **E-mail:** na webu je `fr.kroupa@gmail.com`. Adresa `@archer-reality.cz`
   patří kanceláři, vlastní doména by působila lépe než Gmail.
 - **14 referencí je zkrácených** — slider na profilu ukazoval jen začátek

@@ -46,11 +46,4 @@ export const profile = {
   summaryTitle: "Komplexní přístup",
   summary:
     "Spojuji analytické myšlení, technické znalosti, obchodní zkušenosti, marketingový přesah a precizní provedení. Díky tomu dávám klientům víc než běžné zprostředkování — strategicky vedenou spolupráci, která má jasný směr i výsledek.",
-
-  /**
-   * Pod referencemi. Říká, odkud jsou a že jde o výběr — reference na webu
-   * makléře nesmí vypadat jako úplný nezávislý přehled, když jím nejsou.
-   */
-  reviewsNote:
-    "Výběr z hodnocení klientů na mém profilu v realitní kanceláři Archer Reality. Delší recenze jsou zkrácené, vynechaný text značí […].",
 } as const;

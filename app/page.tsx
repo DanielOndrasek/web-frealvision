@@ -11,7 +11,6 @@ import { PropertyGrid } from "@/components/property/PropertyGrid";
 import { ReviewList } from "@/components/reviews/ReviewList";
 import { getListings } from "@/lib/properties/feed";
 import { getClientReviews } from "@/lib/content/load";
-import { profile } from "@/lib/profile";
 import { JsonLd, realEstateAgentSchema } from "@/lib/seo/schema";
 
 // Stejně jako feed nabídek — viz lib/properties/feed.ts.
@@ -88,7 +87,6 @@ export default async function HomePage() {
           }
         >
           <ReviewList reviews={reviews.slice(0, REVIEWS_ON_HOME)} />
-          <p className="mt-4 text-sm text-ink-subtle">{profile.reviewsNote}</p>
         </Section>
       ) : null}
 
