@@ -37,7 +37,7 @@ Lišta nahoře na webu je vypisuje, dokud nejsou doplněné.
 |---|---|---|
 | Statistiky | `content/statistiky.json` | profil na archer-reality.cz |
 | IČO a sídlo F-Real Vision s.r.o. | `lib/site.ts` → `legal` | ARES |
-| Doména | `NEXT_PUBLIC_SITE_URL` ve Vercelu | František |
+| Doména `f-realvision.cz` — DNS u Web4U, pak `NEXT_PUBLIC_SITE_URL` | `docs/domena.md` | Daniel / František |
 | Napojení na Nemo1 | `NEMO1_INTEGRATION_ID`, `NEMO1_FEED_SECRET` | `docs/napojeni-nemo1.md` |
 | Odkazy na sociální sítě | `lib/site.ts` → `social` | František |
 
