@@ -23,6 +23,14 @@ Poslední aktualizace: 3. 10. 2026.
   změny. Vymyšlený postup „Jak pracuji“ z první verze je pryč.
 - 26 referencí z profilu na archer-reality.cz (`content/recenze.json`).
 
+## E-mailový podpis
+
+Zdroj je `docs/podpis/podpis.html`, uložený je v profilu Františka v Nemo1
+(Nastavení → E-mail). Obrázky leží na webu v `public/podpis/` — **nepřesouvat
+ani nemazat**, odkazují na ně všechny odeslané e-maily. Portrét se žlutým
+blokem je vygenerovaný z `public/foto/frantisek-kroupa.webp` (sharp, 2×),
+logo z `public/logo/frealvision.svg` (3×).
+
 ## Rozhodnuto
 
 - **Jen prodej, žádný pronájem** (1. 10. 2026). Pronájmy z Nemo1 web
