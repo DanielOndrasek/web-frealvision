@@ -19,5 +19,5 @@ export const INTEGRATION_ID = process.env.NEMO1_INTEGRATION_ID;
 /** Sdílené tajemství. Nikdy nesmí opustit server. */
 export const SECRET = process.env.NEMO1_FEED_SECRET;
 
-/** Bez těchhle dvou běží web na ukázkových datech z kontraktu. */
+/** Bez těchhle dvou je nabídka na webu prázdná (v `next dev` ukázková). */
 export const isConfigured = Boolean(INTEGRATION_ID && SECRET);

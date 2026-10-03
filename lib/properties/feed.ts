@@ -15,13 +15,18 @@ import type { Advert, AdvertFeed, Listing, ListingState } from "./types";
  */
 const REVALIDATE_SECONDS = 300;
 
-export const usingFixtures = !isConfigured;
+/**
+ * Ukázka z datového kontraktu je jen pro `next dev` bez přístupu k Nemo1.
+ * Nasazený web bez napojení ukáže prázdnou nabídku — ukázkový byt by
+ * návštěvník bral jako skutečnou nemovitost.
+ */
+const usingFixtures = !isConfigured && process.env.NODE_ENV === "development";
+
+const EMPTY_FEED: AdvertFeed = { version: "", generated_at: "", adverts: [] };
 
 async function fetchFeed(): Promise<AdvertFeed> {
-  if (usingFixtures) {
-    // Vývoj bez přístupu k Nemo1 — ukázka z datového kontraktu.
-    return sample as unknown as AdvertFeed;
-  }
+  if (usingFixtures) return sample as unknown as AdvertFeed;
+  if (!isConfigured) return EMPTY_FEED;
 
   /**
    * Autentizace podle `_shared/webIntegrationAuth.ts` v Nemo1: veřejné

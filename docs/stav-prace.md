@@ -1,6 +1,6 @@
 # Stav práce
 
-Poslední aktualizace: 1. 10. 2026.
+Poslední aktualizace: 3. 10. 2026.
 
 ## Hotovo
 
@@ -31,7 +31,9 @@ Poslední aktualizace: 1. 10. 2026.
 
 ## Chybí — web bez toho nejde spustit
 
-Lišta nahoře na webu je vypisuje, dokud nejsou doplněné.
+Lišta „Náhled rozpracovaného webu“ je pryč (3. 10. 2026, přání klienta).
+Bez Nemo1 ukazuje nasazený web prázdnou nabídku, ukázková data jen
+`next dev`.
 
 | Co | Kam | Zdroj |
 |---|---|---|
@@ -46,8 +48,6 @@ Lišta nahoře na webu je vypisuje, dokud nejsou doplněné.
 - **Negativní recenze Pavla Stupky** (Kladno, byty) na webu není. Je to jediná
   záporná z 27. Jestli ji tam František chce, stačí ji doplnit do
   `content/recenze.json`.
-- **E-mail:** na webu je `fr.kroupa@gmail.com`. Adresa `@archer-reality.cz`
-  patří kanceláři, vlastní doména by působila lépe než Gmail.
 - **14 referencí je zkrácených** — slider na profilu ukazoval jen začátek
   („číst dále“). Konec je označený `[…]`, nic není dopsané. Plné znění
   doplnit u: Pavlovská, Břízek, Kafkovi, Ryšavá, Lebeda, Plachý, Kučerová,

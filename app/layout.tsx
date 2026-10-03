@@ -3,7 +3,6 @@ import { Instrument_Serif, Inter, Inter_Tight } from "next/font/google";
 import { site } from "@/lib/site";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { PreviewBanner } from "@/components/layout/PreviewBanner";
 import "./globals.css";
 
 // latin-ext je kvůli české diakritice povinný u všech tří písem
@@ -54,7 +53,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${inter.variable} ${interTight.variable} ${instrument.variable} h-full`}
     >
       <body className="flex min-h-full flex-col bg-surface text-ink">
-        <PreviewBanner />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

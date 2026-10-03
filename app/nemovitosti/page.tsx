@@ -48,28 +48,37 @@ export default async function PropertiesPage({
           </p>
         </header>
 
-        <div className="mt-10">
-          <PropertyFilters values={values} listings={all} />
-        </div>
+        {/* Bez jediné nabídky by filtr a „0 nabídek“ jen překážely */}
+        {all.length ? (
+          <>
+            <div className="mt-10">
+              <PropertyFilters values={values} listings={all} />
+            </div>
 
-        <p className="mt-6 text-sm text-ink-muted" aria-live="polite">
-          {listings.length === all.length
-            ? `${all.length} nabídek`
-            : `${listings.length} z ${all.length} nabídek`}
-        </p>
+            <p className="mt-6 text-sm text-ink-muted" aria-live="polite">
+              {listings.length === all.length
+                ? `${all.length} nabídek`
+                : `${listings.length} z ${all.length} nabídek`}
+            </p>
+          </>
+        ) : null}
 
-        <div className="mt-6">
+        <div className={all.length ? "mt-6" : "mt-10"}>
           {/* Neviditelný nadpis drží pořadí h1 → h2 → h3 (nadpisy karet) */}
           <h2 className="sr-only">Nabídka nemovitostí</h2>
-          <PropertyGrid
-            listings={listings}
-            emptyTitle="Žádná nabídka neodpovídá filtru"
-            emptyAction={
-              <Button href="/nemovitosti" variant="secondary">
-                Zobrazit všechny nabídky
-              </Button>
-            }
-          />
+          {all.length ? (
+            <PropertyGrid
+              listings={listings}
+              emptyTitle="Žádná nabídka neodpovídá filtru"
+              emptyAction={
+                <Button href="/nemovitosti" variant="secondary">
+                  Zobrazit všechny nabídky
+                </Button>
+              }
+            />
+          ) : (
+            <PropertyGrid listings={[]} />
+          )}
         </div>
       </Container>
     </div>
