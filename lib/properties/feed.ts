@@ -51,6 +51,11 @@ async function fetchFeed(): Promise<AdvertFeed> {
   return (await res.json()) as AdvertFeed;
 }
 
+/** Inzeráty přesně tak, jak je poslal feed — pro hlášení odkazů do Nemo1. */
+export async function getFeedAdverts(): Promise<Advert[]> {
+  return (await fetchFeed()).adverts;
+}
+
 type Overrides = Map<string, ListingOverride>;
 
 /**

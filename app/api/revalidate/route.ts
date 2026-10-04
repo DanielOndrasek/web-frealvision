@@ -1,5 +1,7 @@
 import { createHash, timingSafeEqual } from "node:crypto";
 import { revalidatePath, revalidateTag } from "next/cache";
+import { after } from "next/server";
+import { reportListingUrls } from "@/lib/properties/listing-report";
 
 /**
  * „Nabídky se změnily, zahoď cache“ — pro ruční nebo budoucí automatické
@@ -60,6 +62,10 @@ export async function POST(request: Request) {
   revalidatePath("/nemovitosti");
   revalidatePath("/nemovitosti/[slug]", "page");
   revalidatePath("/sitemap.xml");
+
+  // Nově zveřejněná nabídka dostane odkaz v Nemo1 hned, ne až po obnově
+  // úvodní stránky. Feed se tu stáhne čerstvý — cache je výš zahozená.
+  after(reportListingUrls);
 
   return Response.json({ ok: true, revalidated_at: new Date().toISOString() });
 }

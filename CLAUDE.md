@@ -30,6 +30,7 @@ s Nemo1), vizuál je vlastní: černobílý podle loga.
 | Texty o makléři | `lib/profile.ts` |
 | Kontakty, IČO, sídlo | `lib/site.ts` |
 | Poptávky | POST do `website-lead-webhook` v Nemo1 (HMAC) |
+| Odkaz na detail nabídky | POST do `web-advert-listing` v Nemo1 (HMAC, `lib/properties/listing-report.ts`) |
 
 Nepřidávej Supabase, Prisma ani žádné úložiště.
 

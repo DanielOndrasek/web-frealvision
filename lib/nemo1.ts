@@ -13,6 +13,10 @@ export const FEED_URL = process.env.NEMO1_FEED_URL || `${PROJECT}/web-advert-fee
 export const LEAD_WEBHOOK_URL =
   process.env.NEMO1_LEAD_WEBHOOK_URL || `${PROJECT}/website-lead-webhook`;
 
+/** web → Nemo1: adresa detailu nabídky na webu (lib/properties/listing-report.ts). */
+export const LISTING_REPORT_URL =
+  process.env.NEMO1_LISTING_REPORT_URL || `${PROJECT}/web-advert-listing`;
+
 /** Veřejné ID integrace „Osobní web makléře“. Není tajné. */
 export const INTEGRATION_ID = process.env.NEMO1_INTEGRATION_ID;
 
