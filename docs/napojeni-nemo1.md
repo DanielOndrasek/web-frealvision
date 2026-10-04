@@ -59,6 +59,30 @@ NEMO1_FEED_SECRET=tajemstvi-z-kroku-1
 
 Ověření: `npm run check:feed` — vypíše počet inzerátů, tajemství netiskne.
 
+## Odkaz na nabídku zpátky do Nemo1 (automaticky)
+
+Nemo1 adresu stránky nabídky na webu nezná — slug skládá web. Web ji proto
+sám nahlásí podepsaným POSTem na `web-advert-listing` (stejné ID integrace
+a tajemství jako feed). Nemo1 pak odkaz ukáže u inzerátu a v reportu pro
+majitele a QR kód na tiskové kartě vede sem. Nic dalšího se nenastavuje.
+
+- **Kdy:** po buildu, po každé obnově úvodní stránky (nejvýš jednou za pět
+  minut) a po `/api/revalidate`. Kód: `lib/properties/listing-report.ts`.
+- **Co:** jen prodeje, které jsou ve feedu `active` a web je ukazuje.
+  Staženým inzerátům Nemo1 odkaz maže samo.
+- **Kolikrát:** web si nic nepamatuje, hlásí pokaždé všechno. Jako
+  `reported_at` posílá `updated_at` z feedu, takže opakované hlášení Nemo1
+  pozná a nic nezapíše.
+- **Jen ostrý web:** hlásí se jen při `VERCEL_ENV=production` a s nastavenou
+  doménou v `NEXT_PUBLIC_SITE_URL` (https). Dokud doména není, nehlásí se
+  nic — odkaz na localhost do Nemo1 nepatří.
+
+Omezení: když se změní jen výpočet slugu na webu (inzerát v Nemo1 zůstane
+beze změny), Nemo1 novou adresu nepřijme, dokud se inzerát neupraví.
+Výjimka `"skryto"` odkaz v Nemo1 nesmaže; inzerát je potřeba stáhnout
+i v Nemo1. `NEMO1_LISTING_REPORT_URL` je jen pro test proti jinému
+projektu Supabase.
+
 ---
 
 ## Smlouva — co je potřeba vědět

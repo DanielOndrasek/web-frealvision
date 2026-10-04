@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { after } from "next/server";
 import Link from "next/link";
 import { Section } from "@/components/ui/Section";
 import { Hero } from "@/components/home/Hero";
@@ -10,6 +11,7 @@ import { ContactSection } from "@/components/layout/ContactSection";
 import { PropertyGrid } from "@/components/property/PropertyGrid";
 import { ReviewList } from "@/components/reviews/ReviewList";
 import { getListings } from "@/lib/properties/feed";
+import { reportListingUrls } from "@/lib/properties/listing-report";
 import { getClientReviews } from "@/lib/content/load";
 import { JsonLd, realEstateAgentSchema } from "@/lib/seo/schema";
 
@@ -43,6 +45,10 @@ function MoreLink({ href, children }: { href: string; children: React.ReactNode 
 }
 
 export default async function HomePage() {
+  // Po buildu a každé obnově (nejvýš jednou za `revalidate`) pošle Nemo1
+  // adresy nabídek. Úvodní stránka se obnovuje nejčastěji.
+  after(reportListingUrls);
+
   const [listings, reviews] = await Promise.all([getListings(), getClientReviews()]);
 
   return (
